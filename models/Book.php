@@ -6,7 +6,7 @@ class Book extends AbstractEntity
     private string $author;
     private string $description;
     private DateTime $printDate;
-    private string $owner; //string for now but need a change to int -> gonna match userId later on
+    private string $owner; //FIXME : string for now but need a change to int -> gonna match userId later on
     private string $availability;
     private string $picturePath;
 
