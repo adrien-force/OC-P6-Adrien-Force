@@ -8,6 +8,7 @@ class Book extends AbstractEntity
     private DateTime $printDate;
     private string $owner; //string for now but need a change to int -> gonna match userId later on
     private string $availability;
+    private string $picturePath;
 
     public function getTitle(): string
     {
@@ -67,6 +68,16 @@ class Book extends AbstractEntity
     public function setAvailability(string $availability): void
     {
         $this->availability = $availability;
+    }
+
+    public function getPicturePath(): string
+    {
+        return $this->picturePath;
+    }
+
+    public function setPicturePath(string $picturePath): void
+    {
+        $this->picturePath = $picturePath;
     }
 
 }
