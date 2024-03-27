@@ -14,23 +14,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> TEST TITTLE </title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
 <header>
 
     <nav>
-        <p> TEST NAV </p>
-        <a href="index.php">TEST LINK HOME PAGE</a>
+        <div class="leftNav">
+            <div>
+                <a href="index.php"> <img class="logo" src="ressources/assets/logo.png"> </a>
+            </div>
+            <div>
+                <a href="index.php"> Accueil</a>
+                <a href="index.php"> Nos livres à l'échange</a>
+            </div>
+        </div>
+        <div class="rightNav">
+            <a href="index.php">
+                <i class="fa-regular fa-comment fa-flip-horizontal"></i>
+                Messagerie
+                <span class="msgCount">6</span>
+            </a>
+            <a href="index.php"> <i class="fa-regular fa-user"></i> Mon compte</a>
+            <a href="index.php"> Connexion</a>
+
+        </div>
     </nav>
 </header>
 
 <main>
-    <?php echo $content; /* Ici est affiché le contenu réel de la page. */ ?>
+    <?php if (isset($content)) {
+        echo $content;
+    } /* Ici est affiché le contenu réel de la page. */ ?>
 </main>
 
-<footer>
-    <p> test footer</p>
-</footer>
 
+<footer>
+    <nav>
+        <div class="leftNav">
+        </div>
+        <div class="rightNav">
+            <a href="index.php"> Politique de confidentialité</a>
+            <a href="index.php"> Mentions légales</a>
+            <a href="index.php"> Tom Troc © </a>
+            <a href="index.php"> <img class="logoTT" src="ressources/assets/logoTT.png"> </a>
+        </div>
+    </nav>
+</footer>
 </body>
+
 </html>
