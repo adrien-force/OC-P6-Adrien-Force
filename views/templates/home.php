@@ -13,7 +13,7 @@
                 Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. Nous
                 croyons en la magie du partage de connaissances et d'histoires à travers les livres.
             </h4>
-            <div><a href="/index.php">
+            <div><a href="/index.php" class="mainButton">
                     Découvrir
                 </a></div>
 
@@ -26,33 +26,105 @@
             </h4>
         </div>
     </div>
-
+    <span class="overrideBg">
     <div class="section2">
         <h2>
             Les derniers livres ajoutés
         </h2>
 
         <div class="bookGrid">
-            <div class="book">
+            <div class="bookCard">
                 <img src="ressources/assets/book1.png">
+                <h3>
+                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                </h3>
+                <h4>
+                    Auteur
+                </h4>
+                <h5>
+                    Vendu par : Nom de l'utilisateur
+                </h5>
             </div>
-            <div class="book">
-                <img src="ressources/assets/book2.png">
+            <div class="bookCard">
+                <img src="ressources/assets/book1.png">
+                <h3>
+                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                </h3>
+                <h4>
+                    Auteur
+                </h4>
+                <h5>
+                    Vendu par : Nom de l'utilisateur
+                </h5>
             </div>
-            <div class="book">
-                <img src="ressources/assets/book3.png">
+            <div class="bookCard">
+                <img src="ressources/assets/book1.png">
+                <h3>
+                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                </h3>
+                <h4>
+                    Auteur
+                </h4>
+                <h5>
+                    Vendu par : Nom de l'utilisateur
+                </h5>
             </div>
-            <div class="book">
-                <img src="ressources/assets/book4.png">
+            <div class="bookCard">
+                <img src="ressources/assets/book1.png">
+                <h3>
+                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                </h3>
+                <h4>
+                    Auteur
+                </h4>
+                <h5>
+                    Vendu par : Nom de l'utilisateur
+                </h5>
             </div>
+
         </div>
 
-        <div class="section3">
-
-        </div>
-
-        <div class="section4">
-
-        </div>
+        <a href="index.php" class="mainButton">
+            Voir tous les livres
+        </a>
 
     </div>
+</span>
+    <div class="section3">
+
+        <h2> Comment ça marche ? </h2>
+        <h3> Échanger des livres avec TomTroc c’est simple et amusant ! Suivez ces étapes pour commencer : </h3>
+        <div class="infoCardGrid">
+            <div class="infoCard"> Inscrivez-vous gratuitement sur
+                notre plateforme. </div>
+            <div class="infoCard"> Ajoutez les livres que vous souhaitez échanger à votre profil.</div>
+            <div class="infoCard"> Parcourez les livres disponibles chez d'autres membres.</div>
+            <div class="infoCard"> Proposez un échange et discutez avec d'autres passionnés de lecture.</div>
+        </div>
+
+        <a class="mainButton clearButton" href="/index.php"> Voir tous les livres </a>
+
+    </div>
+
+    <div class="section4">
+        <img src="ressources/assets/homeMidBanner.png"> <!-- TODO override bg -->
+    </div>
+
+    <div class="section5">
+
+        <h2> Nos valeurs </h2>
+        <h3> Chez Tom Troc, nous mettons l'accent sur le partage, la découverte et la communauté. Nos valeurs sont
+            ancrées dans notre passion pour les livres et notre désir de créer des liens entre les lecteurs. Nous
+            croyons en la puissance des histoires pour rassembler les gens et inspirer des conversations enrichissantes.
+
+            Notre association a été fondée avec une conviction profonde : chaque livre mérite d'être lu et partagé.
+
+            Nous sommes passionnés par la création d'une plateforme conviviale qui permet aux lecteurs de se connecter,
+            de partager leurs découvertes littéraires et d'échanger des livres qui attendent patiemment sur les
+            étagères. </h3>
+        <h4>L’équipe Tom Troc</h4>
+        <img src="ressources/assets/heart.png">
+
+    </div>
+
+</div>

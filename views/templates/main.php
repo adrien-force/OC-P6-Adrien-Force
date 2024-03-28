@@ -27,7 +27,7 @@
             </div>
             <div>
                 <a href="index.php"> Accueil</a>
-                <a href="index.php"> Nos livres à l'échange</a>
+                <a href="?action=ourBooks"> Nos livres à l'échange</a>
             </div>
         </div>
         <div class="rightNav">
