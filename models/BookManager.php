@@ -17,6 +17,24 @@ class BookManager extends AbstractEntityManager
         return $books;
     }
 
+    function fakeBookArray(int $int): array
+    {
+        $books = [];
+        for ($i = 0; $i < $int; $i++) {
+            $book = new Book();
+            $book->setId(2);
+            $book->setTitle('Title' . $i);
+            $book->setAuthor('Author' . $i);
+            $book->setDescription('Description' . $i);
+            $book->setPrintDate(new DateTime());
+            $book->setOwner('Owner' . $i);
+            $book->setAvailability('Availability' . $i);
+            $books[] = $book;
+        }
+        return $books;
+    }
+
+
     public function addBook(Book $book): void
     {
         $sql = <<<SQL
@@ -28,6 +46,20 @@ class BookManager extends AbstractEntityManager
 
         ]);
 
+    }
+
+    public function getBookById(int $id): ?Book
+    {
+        $sql = <<<SQL
+        SELECT * FROM book WHERE id = :id
+        SQL;
+        $result = $this->db->query($sql, ['id' => $id]);
+        $book = $result->fetch();
+        if ($book) {
+            return new Book($book);
+        }
+
+        return null;
     }
 
 }

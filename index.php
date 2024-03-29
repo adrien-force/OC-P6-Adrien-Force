@@ -21,6 +21,11 @@ try {
             $bookController->showOurBooks();
             break;
 
+        case 'detailBook':
+            $bookController = new BookController();
+            $bookController->showDetail();
+            break;
+
         default:
             throw new Exception('Action non valide');
     }

@@ -2,9 +2,10 @@
 /** Page d'accueil expliquant le fonctionnement et montrant les 4 derniers livres */
 ?>
 
-<div>
+<div class="homePage">
 
     <div class="section1">
+
         <div class="leftPanel">
             <h2>
                 Rejoignez nos lecteurs passionnés
@@ -26,77 +27,79 @@
             </h4>
         </div>
     </div>
-    <span class="overrideBg">
-    <div class="section2">
-        <h2>
-            Les derniers livres ajoutés
-        </h2>
 
-        <div class="bookGrid">
-            <div class="bookCard">
-                <img src="ressources/assets/book1.png">
-                <h3>
-                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                </h3>
-                <h4>
-                    Auteur
-                </h4>
-                <h5>
-                    Vendu par : Nom de l'utilisateur
-                </h5>
+    <div class="bgOverflow">
+        <div class="section2">
+            <h2>
+                Les derniers livres ajoutés
+            </h2>
+
+            <div class="bookGrid">
+                <div class="bookCard">
+                    <img src="ressources/assets/book1.png">
+                    <h3>
+                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                    </h3>
+                    <h4>
+                        Auteur
+                    </h4>
+                    <h5>
+                        Vendu par : Nom de l'utilisateur
+                    </h5>
+                </div>
+                <div class="bookCard">
+                    <img src="ressources/assets/book1.png">
+                    <h3>
+                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                    </h3>
+                    <h4>
+                        Auteur
+                    </h4>
+                    <h5>
+                        Vendu par : Nom de l'utilisateur
+                    </h5>
+                </div>
+                <div class="bookCard">
+                    <img src="ressources/assets/book1.png">
+                    <h3>
+                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                    </h3>
+                    <h4>
+                        Auteur
+                    </h4>
+                    <h5>
+                        Vendu par : Nom de l'utilisateur
+                    </h5>
+                </div>
+                <div class="bookCard">
+                    <img src="ressources/assets/book1.png">
+                    <h3>
+                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
+                    </h3>
+                    <h4>
+                        Auteur
+                    </h4>
+                    <h5>
+                        Vendu par : Nom de l'utilisateur
+                    </h5>
+                </div>
+
             </div>
-            <div class="bookCard">
-                <img src="ressources/assets/book1.png">
-                <h3>
-                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                </h3>
-                <h4>
-                    Auteur
-                </h4>
-                <h5>
-                    Vendu par : Nom de l'utilisateur
-                </h5>
-            </div>
-            <div class="bookCard">
-                <img src="ressources/assets/book1.png">
-                <h3>
-                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                </h3>
-                <h4>
-                    Auteur
-                </h4>
-                <h5>
-                    Vendu par : Nom de l'utilisateur
-                </h5>
-            </div>
-            <div class="bookCard">
-                <img src="ressources/assets/book1.png">
-                <h3>
-                    Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                </h3>
-                <h4>
-                    Auteur
-                </h4>
-                <h5>
-                    Vendu par : Nom de l'utilisateur
-                </h5>
-            </div>
+
+            <a href="index.php" class="mainButton">
+                Voir tous les livres
+            </a>
 
         </div>
-
-        <a href="index.php" class="mainButton">
-            Voir tous les livres
-        </a>
-
     </div>
-</span>
     <div class="section3">
 
         <h2> Comment ça marche ? </h2>
         <h3> Échanger des livres avec TomTroc c’est simple et amusant ! Suivez ces étapes pour commencer : </h3>
         <div class="infoCardGrid">
             <div class="infoCard"> Inscrivez-vous gratuitement sur
-                notre plateforme. </div>
+                notre plateforme.
+            </div>
             <div class="infoCard"> Ajoutez les livres que vous souhaitez échanger à votre profil.</div>
             <div class="infoCard"> Parcourez les livres disponibles chez d'autres membres.</div>
             <div class="infoCard"> Proposez un échange et discutez avec d'autres passionnés de lecture.</div>

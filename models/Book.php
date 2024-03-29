@@ -45,8 +45,11 @@ class Book extends AbstractEntity
         return $this->printDate;
     }
 
-    public function setPrintDate(DateTime $printDate): void
+    public function setPrintDate(string|DateTime $printDate): void //FIXME : BDD Return a string,IDK WHY
     {
+        if (is_string($printDate)) {
+            $printDate = new DateTime($printDate);
+        }
         $this->printDate = $printDate;
     }
 
