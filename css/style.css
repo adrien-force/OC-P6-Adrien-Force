@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -23,8 +24,7 @@ a {
 :root {
     --backgroundColor: #f5f3ef;
     --backgroundSecondColor: #faf9f7;
-    --brandColor: #00AC66;
-;
+    --brandColor: #00AC66;;
 
 }
 
@@ -305,7 +305,7 @@ footer .logoTT {
 .bookCard {
     display: flex;
     flex-direction: column;
-    align-items:start;
+    align-items: start;
     justify-content: space-between;
     width: 200px;
     height: 324px;
@@ -420,8 +420,8 @@ footer .logoTT {
     font-weight: 400;
     line-height: 16.94px;
     text-align: center;
-    width : 215px;
-    height : 139px;
+    width: 215px;
+    height: 139px;
     background-color: white;
     border-radius: 10px;
     padding: 0px 20px 0px 20px;
@@ -503,7 +503,7 @@ footer .logoTT {
     width: 100%;
 }
 
-.ourBookTop{
+.ourBookTop {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -583,9 +583,9 @@ input:focus {
  */
 
 .detailBookPage .bgOverflow {
-    background: #FAF9F7;
-;
+    background: #FAF9F7;;
 }
+
 .detailBookPage {
     display: flex;
     flex-direction: column;
@@ -646,7 +646,6 @@ input:focus {
     margin-top: 20px;
     color: #292929;
 }
-
 
 
 .photoSide {
@@ -750,15 +749,15 @@ input:focus {
 }
 
 .signUpPage .signUpPageContent {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        width: 50%;
-        min-height: 700px;
-        height: 100%;
-        margin-right: 30px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
+    min-height: 700px;
+    height: 100%;
+    margin-right: 30px;
+}
 
 .signUpPage .rightImg {
     display: flex;
@@ -791,7 +790,7 @@ input:focus {
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color : #292929;
+    color: #292929;
 }
 
 .signUpFormBox h4 {
@@ -987,7 +986,103 @@ input:focus {
     margin-top: 50px;
     background-color: #FFFFFF;
     border-radius: 20px;
+    margin-bottom: 100px;
 }
+
+.myAccountPageContent th {
+    font-family: Inter;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 9.68px;
+    letter-spacing: 0.08em;
+    color: #292929;
+    text-align: center;
+    height: 50px;
+}
+
+.myAccountPageContent table tr:first-child th:first-child {
+    border-top-left-radius: 20px;
+}
+
+.myAccountPageContent table tr:first-child th:last-child {
+    border-top-right-radius: 20px;
+}
+
+.myAccountPageContent table tr:last-child td:first-child {
+    border-bottom-left-radius: 20px;
+}
+
+.myAccountPageContent table tr:last-child td:last-child {
+    border-bottom-right-radius: 20px;
+}
+
+.myAccountPageContent tbody tr:not(:first-child):nth-child(odd) {
+    background-color: #EDF2F6;
+}
+
+.myAccountPageContent tbody tr:not(:first-child):nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.myAccountPageContent .tableAlternateColor {
+    background-color: #EDF2F6;
+}
+
+.myAccountPageContent td {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    height: 130px;
+    text-align: center;
+    border-bottom: 1px SOLID #F5F3EF;
+    border-top: 1px SOLID #F5F3EF;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.myAccountPageContent table img {
+    width: 78px;
+    height: 78px;
+}
+
+.myAccountPageContent table .availability {
+    font-family: Inter;
+    font-size: 8.88px;
+    font-weight: 500;
+    line-height: 10.74px;
+    text-align: left;
+    border-radius: 30px;
+    padding: 7px 20px 7px 20px;
+    color: #FFFFFF;
+
+}
+
+.available {
+    background-color: #6DC5A1;
+}
+
+.unavailable {
+    background-color: #C56D6D;
+}
+
+.myAccountPageContent .editButton {
+    text-decoration: underline;
+    color: #292929;
+    margin-right: 20px;
+}
+
+.myAccountPageContent .deleteButton {
+    text-decoration: underline;
+    color: #CB2D2D;
+}
+
+.italic {
+    font-style: italic;
+}
+
 
 
 

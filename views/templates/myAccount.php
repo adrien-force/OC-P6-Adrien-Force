@@ -44,18 +44,29 @@
         </section>
         <table class="myAccountBooks">
             <tr>
-                <th> Mes livres</th>
-                <th> Auteur</th>
-                <th> Vendu par</th>
-                <th> </th>
+                <th> PHOTO </th>
+                <th> TITRE</th>
+                <th> AUTEUR</th>
+                <th> DESCRIPTION </th>
+                <th> DISPONIBILITE</th>
+                <th> ACTION </th>
             </tr>
             <tr>
-                <td> Titre du livre</td>
-                <td> Auteur</td>
-                <td> Nom de l'utilisateur</td>
-                <td> <a> Supprimer</a></td>
+                <td> <img src="ressources/assets/book1.png"></td>
+                <td> Titre </td>
+                <td> Auteur </td>
+                <td class="italic"> Description </td>
+                <td class=""> <span class="availability available">disponible</span></td>
+                <td> <a class="editButton">Éditer</a><a class="deleteButton">Supprimer</a></td>
             </tr>
-
+            <tr class="tableAlternateColor">
+            <td> <img src="ressources/assets/book1.png"></td>
+            <td> Titre </td>
+            <td> Auteur </td>
+            <td class="italic"> Description </td>
+            <td class=""> <span class="availability unavailable">disponible</span></td>
+            <td> <a class="editButton">Éditer</a><a class="deleteButton">Supprimer</a></td>
+            </tr>
         </table>
     </div>
 
