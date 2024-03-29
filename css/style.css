@@ -50,6 +50,8 @@ header {
     /*background-color: var(--backgroundSecondColor);*/
     border-bottom: 2px solid BLACK;
     max-width: 1140px;
+    margin-left: 20px;
+    margin-right: 20px;
 
 }
 
@@ -279,6 +281,7 @@ footer .logoTT {
     justify-content: center;
     align-content: center;
     position: relative;
+    overflow: hidden;
 }
 
 
@@ -769,9 +772,9 @@ input:focus {
 }
 
 .signUpPage .rightImg img {
-    height: auto;
-    max-height: 800px;
-    width: 827px;
+    height: 827px;
+    position: relative;
+    width: 720px;
 }
 
 .signUpPage h2 {
