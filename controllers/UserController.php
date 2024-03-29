@@ -14,4 +14,10 @@ class UserController
         $view->render('signUp');
     }
 
+    public function showSignIn(): void
+    {
+        $view = new View("signIn");
+        $view->render('signIn');
+    }
+
 }

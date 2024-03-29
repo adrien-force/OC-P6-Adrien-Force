@@ -47,8 +47,6 @@ header {
     width: 100%;
     height: 80px;
     padding: 20px 0;
-    /*background-color: var(--backgroundSecondColor);*/
-    border-bottom: 2px solid BLACK;
     max-width: 1140px;
     margin-left: 20px;
     margin-right: 20px;
@@ -137,7 +135,6 @@ footer {
     height: 80px;
     padding: 20px 0;
     background-color: var(--backgroundSecondColor);
-    border-top: 2px solid BLACK;
     margin-top: auto;
     position: relative;
     left: 0;
@@ -740,7 +737,7 @@ input:focus {
 }
 
 /**
- * Inscription Page
+ * SignUp Page (re-used for SignIn Page)
  */
 
 .signUpPage {

@@ -27,7 +27,7 @@
         <a class="mainButton">
             S'inscrire
         </a>
-        <h3> Déjà inscrit ? <a href="index.php?action=signUp"> Connectez-vous </a></h3>
+        <h3> Déjà inscrit ? <a href="index.php?action=signIn"> Connectez-vous </a></h3>
     </div>
     <div class="rightImg">
         <img src="ressources/assets/signUpImage.jpeg">
