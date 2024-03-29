@@ -26,6 +26,11 @@ try {
             $bookController->showDetail();
             break;
 
+        case 'signUp':
+            $userController = new UserController();
+            $userController->showSignUp();
+            break;
+
         default:
             throw new Exception('Action non valide');
     }

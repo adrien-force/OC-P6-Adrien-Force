@@ -37,7 +37,7 @@
                 <span class="msgCount">6</span>
             </a>
             <a href="index.php"> <i class="fa-regular fa-user"></i> Mon compte</a>
-            <a href="index.php"> Connexion</a>
+            <a href="index.php?action=signUp"> Connexion</a>
 
         </div>
     </nav>
