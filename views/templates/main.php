@@ -36,8 +36,8 @@
                 Messagerie
                 <span class="msgCount">6</span>
             </a>
-            <a href="index.php"> <i class="fa-regular fa-user"></i> Mon compte</a>
-            <a href="index.php?action=signUp"> Connexion</a>
+            <a href="index.php?action=myAccount"> <i class="fa-regular fa-user"></i> Mon compte</a>
+            <a href="index.php?action=signIn"> Connexion</a>
 
         </div>
     </nav>

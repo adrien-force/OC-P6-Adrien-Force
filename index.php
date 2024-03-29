@@ -36,6 +36,11 @@ try {
             $userController->showSignIn();
             break;
 
+        case 'myAccount':
+            $userController = new UserController();
+            $userController->showMyAccount();
+            break;
+
         default:
             throw new Exception('Action non valide');
     }

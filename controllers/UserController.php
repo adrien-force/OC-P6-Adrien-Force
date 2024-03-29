@@ -20,4 +20,10 @@ class UserController
         $view->render('signIn');
     }
 
+    public function showMyAccount(): void
+    {
+        $view = new View("My Account");
+        $view->render('myAccount');
+    }
+
 }
