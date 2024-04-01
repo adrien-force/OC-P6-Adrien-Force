@@ -26,4 +26,10 @@ class UserController
         $view->render('myAccount');
     }
 
+    public function showAccount(): void
+    {
+        $view = new View("Account");
+        $view->render('account');
+    }
+
 }

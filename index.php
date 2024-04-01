@@ -41,6 +41,22 @@ try {
             $userController->showMyAccount();
             break;
 
+        case 'account':
+            $userController = new UserController();
+            $userController->showAccount();
+            break;
+
+        case 'modifyBook':
+            $bookController = new BookController();
+            $bookController->showModify();
+            break;
+
+        case 'inbox':
+            $messageController = new MessageController();
+            $messageController->showInbox();
+            break;
+
+
         default:
             throw new Exception('Action non valide');
     }

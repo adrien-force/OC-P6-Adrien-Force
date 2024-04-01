@@ -1083,13 +1083,225 @@ input:focus {
     font-style: italic;
 }
 
+/*
+ Account Page
+*/
+
+.accountPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.accountPageContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1140px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.accountPageContent table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+
+.accountPageContent th {
+    font-family: Inter;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 9.68px;
+    letter-spacing: 0.08em;
+    color: #292929;
+    text-align: center;
+    height: 50px;
+}
+
+.accountPageContent table tr:first-child th:first-child {
+    border-top-left-radius: 20px;
+}
+
+.accountPageContent table tr:first-child th:last-child {
+    border-top-right-radius: 20px;
+}
+
+.accountPageContent table tr:last-child td:first-child {
+    border-bottom-left-radius: 20px;
+}
+
+.accountPageContent table tr:last-child td:last-child {
+    border-bottom-right-radius: 20px;
+}
+
+.accountPageContent tbody tr:not(:first-child):nth-child(odd) {
+    background-color: #EDF2F6;
+}
+
+.accountPageContent tbody tr:not(:first-child):nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.accountPageContent .tableAlternateColor {
+    background-color: #EDF2F6;
+}
+
+.accountPageContent td {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    height: 130px;
+    text-align: center;
+    border-bottom: 1px SOLID #F5F3EF;
+    border-top: 1px SOLID #F5F3EF;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.accountPageContent table img {
+    width: 78px;
+    height: 78px;
+}
+
+.accountPageContent table .availability {
+    font-family: Inter;
+    font-size: 8.88px;
+    font-weight: 500;
+    line-height: 10.74px;
+    text-align: left;
+    border-radius: 30px;
+    padding: 7px 20px 7px 20px;
+    color: #FFFFFF;
+
+}
+
+.available {
+    background-color: #6DC5A1;
+}
+
+.unavailable {
+    background-color: #C56D6D;
+}
+
+.accountPage .myAccountCard {
+    height: 579px;
+    width: 341px;
+    margin-right: 15px;
+}
+
+.accountPageContent .myAccountBooks {
+    margin : 0px;
+}
+
+.accountPageContent .mainButton {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: center;
+    width: 215px;
+    height: 63px;
+    color: #00AC66;
+    margin-top: 40px;
+}
 
 
+/*
+Modify Book Page
+*/
+
+.modifyBookPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modifyBookPage .bgOverflow {
+    flex-direction: column;
+    align-items: center;
+}
 
 
+.modifyBookPage h1 {
+    font-family: Playfair Display;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 34.66px;
+    text-align: left;
+    margin-top: 25px;
+}
 
+.modifyBookPage .title {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: 100%;
+    max-width: 1140px;
+    text-align: start;
+}
 
+.modifyBookPage .breadcrumb {
+    max-width: 1140px;
+}
 
+.modifyBookPage .modifyBookContent {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin-bottom: 90px;
+}
+
+.modifyBookPage .photoSide {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: auto;
+    height: auto;
+}
+
+.modifyBookPage img {
+    width: 500px;
+    height: 500px;
+    margin: 0px;
+}
+
+.modifyBookPage input {
+    width: 435px;
+}
+
+.resizableFormBox input {
+    min-height: 50px;
+    height: fit-content;
+/* TODO : Adjust height base on the desc length*/
+}
+
+.modifyBookPage .mainButton {
+    width: 322px;
+    height: 63px;
+}
+
+/*
+Inbox Page
+ */
 
 
 
