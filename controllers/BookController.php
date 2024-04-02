@@ -39,4 +39,17 @@ class BookController
         $view->render('detailBook', ['book' => $book]);
     }
 
+    public function showModify():void
+    {
+//        $bookManager = new BookManager();
+//        $book = $bookManager->getBookById($id);
+//
+//        if (!$book) {
+//            throw new Exception("The book does not exist.");
+//        }
+
+        $view = new View("Modifier"); //TODO: Find a better name (:
+        $view->render('modifyBook', []);
+    }
+
 }

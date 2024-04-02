@@ -42,6 +42,14 @@ html {
 
 header {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #f5f3ef;
+}
+
+.headerOverflow {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -52,6 +60,7 @@ header {
     margin-right: 20px;
 
 }
+
 
 nav a {
     color: #292929;
@@ -69,7 +78,7 @@ header .rightNav a {
     margin-left: 55px;
 }
 
-header > nav {
+header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -109,6 +118,7 @@ body {
     margin: auto;
     border-left: 1px solid BLACK;
     border-right: 1px solid BLACK;
+    min-height: 100vh;
 }
 
 main {
@@ -672,7 +682,6 @@ input:focus {
     justify-content: start;
     align-items: center;
     width: 100%;
-    margin-top: 20px;
     margin-bottom: 17px;
     max-width: 1140px;
     font-family: Inter;
@@ -681,6 +690,7 @@ input:focus {
     line-height: 12.1px;
     text-align: left;
     color: #A6A6A6;
+    margin-top: 40px;
 }
 
 .detailBookContent {
@@ -1096,6 +1106,14 @@ input:focus {
     width: 100%;
 }
 
+body:has(.accountPage) {
+    background-color: #faf9f7;
+}
+
+.accountPage .bgOverflow {
+    min-height: fit-content;
+}
+
 .accountPageContent {
     display: flex;
     flex-direction: row;
@@ -1222,6 +1240,10 @@ input:focus {
 Modify Book Page
 */
 
+.modifyBookPage .breadcrumb {
+    margin-bottom: 0px;
+}
+
 .modifyBookPage {
     display: flex;
     align-items: center;
@@ -1241,7 +1263,42 @@ Modify Book Page
     font-weight: 400;
     line-height: 34.66px;
     text-align: left;
-    margin-top: 25px;
+    margin-top: 22px;
+}
+
+.modifyBookContent > .photoSide > h4 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    color: #A6A6A6;
+    margin-bottom: 10px;
+}
+
+.modifyPicLink {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: right;
+    color: #292929;
+    margin-top: 23px;
+    text-decoration: underline;
+    width: 488px;
+    margin-right: 1px;
+}
+
+.modifyBook > .myAccountFormBox > h4 {
+    margin-top: 0px;
+}
+
+.modifyBook > .myAccountFormBox > input {
+    margin-bottom: 32px;
+}
+
+.modifyBook > .myAccountFormBox > textarea {
+    margin-bottom: 32px;
 }
 
 .modifyBookPage .title {
@@ -1251,10 +1308,21 @@ Modify Book Page
     width: 100%;
     max-width: 1140px;
     text-align: start;
+    margin-bottom: 23px;
 }
 
 .modifyBookPage .breadcrumb {
     max-width: 1140px;
+    text-align: center;
+
+}
+
+.modifyBookPage > .bgOverflow > .breadcrumb > h5 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
 }
 
 .modifyBookPage .modifyBookContent {
@@ -1264,9 +1332,10 @@ Modify Book Page
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 50px;
     margin-bottom: 90px;
+    max-width: 1140px;
 }
 
 .modifyBookPage .photoSide {
@@ -1279,19 +1348,39 @@ Modify Book Page
 }
 
 .modifyBookPage img {
-    width: 500px;
-    height: 500px;
+    width: 488px;
+    height: 488px;
     margin: 0px;
+    min-height: 488px;
+    object-fit: fill;
 }
 
 .modifyBookPage input {
     width: 435px;
 }
 
-.resizableFormBox input {
-    min-height: 50px;
-    height: fit-content;
-/* TODO : Adjust height base on the desc length*/
+.form {
+    width: 435px;
+    resize: none;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    color: #292929;
+    padding: 10px;
+    background-color: #EDF2F6;
+    border: 1px solid #F0F0F0;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+
+.form:focus {
+    outline: none;
+}
+
+.selectorPadding {
+    border-right: 10px solid #EDF2F6;
 }
 
 .modifyBookPage .mainButton {
@@ -1302,6 +1391,43 @@ Modify Book Page
 /*
 Inbox Page
  */
+
+.inboxPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inboxPage .bgOverflow {
+    background-color: #f5f3ef;
+}
+
+.inboxPageContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1140px;
+    flex-direction: row;
+
+}
+
+.conversationSide {
+    width: 30%;
+    min-width: 250px;
+    background-color: #FAF9F7;
+    height: 900px;
+/*    FIXME HEIGHT FOR TESTING*/
+
+}
+
+.messageSide {
+    width: 70%;
+    height: 200px;
+    background-color: #00AC66;
+}
+
+
 
 
 

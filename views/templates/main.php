@@ -19,7 +19,7 @@
 </head>
 <body>
 <header>
-
+    <div class="headerOverflow">
     <nav>
         <div class="leftNav">
             <div>
@@ -41,6 +41,7 @@
 
         </div>
     </nav>
+    </div>
 </header>
 
 <main>
