@@ -1413,28 +1413,306 @@ Inbox Page
 }
 
 .conversationSide {
-    width: 30%;
+    width: 27%;
     min-width: 250px;
     background-color: #FAF9F7;
-    height: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
 /*    FIXME HEIGHT FOR TESTING*/
 
 }
 
-.messageSide {
-    width: 70%;
-    height: 200px;
-    background-color: #00AC66;
+.conversationSideTitle {
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    background-color: #faf9f7;
+}
+
+.conversationSideTitle h2 {
+    font-family: Playfair Display;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 34.66px;
+    text-align: left;
+    color: #000000;
+    margin: 25px;
+}
+.conversations {
+    width: 100%;
+    height: 76vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    overflow: auto;
+
+}
+
+.conversationInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 80%;
+}
+
+.conversationInfoTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.conversationInfoBot {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.conversationInfoBot h4 {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: #A6A6A6;
+}
+
+.conversation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 84px;
+    /*background-color: #ffffff;*/
+    padding: 17px
+}
+
+.conversation.selected {
+    background-color: #ffffff;
 }
 
 
+.conversation > img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
 
+}
 
+.conversationInfos h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content;
+}
 
+.conversationPseudo {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+}
 
+.conversationTime{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+}
 
+.messages {
+    display: flex;
+    flex-direction: column-reverse;
+    /* ! Reverse to trick the scroll bar to be at the bottom */
+    align-items: start;
+    width: 100%;
+    height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
+.messageSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 73%;
+    height: 86vh;
+    padding: 45px;
+}
 
+.messageSide h2 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    text-align: left;
+    color: #000000;
+}
 
+.messageTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    margin-bottom: 20px;
 
+}
+
+.messageTop img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.messageBot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.messageBot input {
+    width: 80%;
+    height: 49px;
+    border: 1px SOLID #F0F0F0;
+    border-radius: 6px;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    color: #A6A6A6;
+}
+
+.messageBot a {
+    margin: 0;
+    width: 132px;
+    height: 48px;
+}
+
+.messageSentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.messages h4 {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: #292929;
+}
+
+.messages h3 {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: #A6A6A6;
+}
+
+.messageSentContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 10px;
+    height: fit-content;
+    min-height: 47px;
+    max-width: 90%;
+    background-color: #EDF2F6;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.messageReceivedBox {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.messageReceivedInfos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}
+
+.messageReceivedInfos img {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.messageReceivedContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 10px;
+    height: fit-content;
+    min-height: 47px;
+    max-width: 90%;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.messageReceivedContent h3 {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: #A6A6A6;
+}
+
+.messageReceivedContent h4 {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: #292929;
+}
 
