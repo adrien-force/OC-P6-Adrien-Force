@@ -15,7 +15,7 @@ class BookController
     public function showOurBooks(): void
     {
         $bookManager = new BookManager();
-        $books = $bookManager->fakeBookArray(24);
+        $books = $bookManager->fakeBookArray(16);
 
         $view = new View("Our Books");
         $view->render('ourBooks', ['books'=>$books]);

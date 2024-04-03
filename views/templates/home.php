@@ -125,7 +125,7 @@
             Nous sommes passionnés par la création d'une plateforme conviviale qui permet aux lecteurs de se connecter,
             de partager leurs découvertes littéraires et d'échanger des livres qui attendent patiemment sur les
             étagères. </h3>
-        <h4>L’équipe Tom Troc</h4>
+        <div class="leftJustify"><h4>L’équipe Tom Troc</h4></div>
         <img src="ressources/assets/heart.png">
 
     </div>
