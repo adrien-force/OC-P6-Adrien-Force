@@ -9,7 +9,7 @@ $action = Utils::request('action', 'home');
 
 // Try catch global pour gérer les erreurs
 try {
-    switch ($action) {
+    switch ($action) { //TODO : Ce switch peut etre remplacé par un match
 
         case 'home':
             $bookController = new BookController();
