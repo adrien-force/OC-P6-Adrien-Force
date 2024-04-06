@@ -76,4 +76,18 @@ class BookManager extends AbstractEntityManager
         return null;
     }
 
+    public function searchBooks($searchQuery) {
+        $sql = <<<SQL
+        SELECT * FROM book WHERE title LIKE :search OR author LIKE :search
+        SQL;
+        $result = $this->db->query($sql, ['search' => "%$searchQuery%"]);
+        $books = [];
+
+        while ($book = $result->fetch()) {
+            $books[] = new Book($book);
+        }
+
+        return $books;
+    }
+
 }

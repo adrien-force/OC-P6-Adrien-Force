@@ -15,7 +15,12 @@ class BookController
     public function showOurBooks(): void
     {
         $bookManager = new BookManager();
-        $books = $bookManager->getAllBooks();
+        if (isset($_GET['search'])) {
+            $searchQuery = $_GET['search'];
+            $books = $bookManager->searchBooks($searchQuery);
+        } else {
+            $books = $bookManager->getAllBooks();
+        }
 
         $view = new View("Our Books");
         $view->render('ourBooks', ['books'=>$books]);
