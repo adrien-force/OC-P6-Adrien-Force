@@ -3,6 +3,7 @@
 class User extends AbstractEntity
 {
     private string $username;
+    private string $email;
     private string $password;
     private string $role;
     private string $picture;
@@ -45,5 +46,15 @@ class User extends AbstractEntity
     public function setPicture(string $picture): void
     {
         $this->picture = $picture;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
     }
 }

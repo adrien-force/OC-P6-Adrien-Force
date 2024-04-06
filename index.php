@@ -56,6 +56,11 @@ try {
             $messageController->showInbox();
             break;
 
+        case 'register':
+            $UserController = new UserController();
+            $UserController->register();
+            break;
+
 
         default:
             throw new Exception('Action non valide');

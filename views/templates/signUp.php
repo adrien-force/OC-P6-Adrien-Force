@@ -6,27 +6,21 @@
 <div class="signUpPage">
     <div class="signUpPageContent">
         <h2>Inscription</h2>
-        <div class="signUpFormBox">
-            <h4>
-                Pseudo
-            </h4>
-            <input type="text" placeholder="">
-        </div>
-        <div class="signUpFormBox">
-            <h4>
-                Adresse email
-            </h4>
-            <input type="text" placeholder="">
-        </div>
-        <div class="signUpFormBox">
-            <h4>
-                Mot de passe
-            </h4>
-            <input type="text" placeholder="">
-        </div>
-        <a class="mainButton">
-            S'inscrire
-        </a>
+        <form action="index.php?action=register" method="post">
+            <div class="signUpFormBox">
+                <h4>Pseudo</h4>
+                <input type="text" name="username" placeholder="">
+            </div>
+            <div class="signUpFormBox">
+                <h4>Adresse email</h4>
+                <input type="email" name="email" placeholder="">
+            </div>
+            <div class="signUpFormBox">
+                <h4>Mot de passe</h4>
+                <input type="password" name="password" placeholder="">
+            </div>
+            <button type="submit" class="mainButton">S'inscrire</button>
+        </form>
         <h3> Déjà inscrit ? <a href="index.php?action=signIn"> Connectez-vous </a></h3>
     </div>
     <div class="rightImg">

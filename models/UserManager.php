@@ -7,7 +7,7 @@ class UserManager extends AbstractEntityManager
         $sql = <<<SQL
         SELECT * 
         FROM user 
-        WHERE usermane = :username
+        WHERE username = :username
         SQL;
         $result = $this->db->query($sql, ['username' => $username]);
         $user = $result->fetch();
@@ -55,5 +55,20 @@ class UserManager extends AbstractEntityManager
         }
 
         return '';
+    }
+
+    public function addUser(User $user): void
+    {
+        $sql = <<<SQL
+    INSERT INTO user (username, email, password, role, picture)
+    VALUES (:username, :email, :password, :role, :picture)
+    SQL;
+        $this->db->query($sql, [
+            'username' => $user->getUsername(),
+            'email' => $user->getEmail(),
+            'password' => $user->getPassword(),
+            'role' => $user->getRole(),
+            'picture' => $user->getPicture()
+        ]);
     }
 }
