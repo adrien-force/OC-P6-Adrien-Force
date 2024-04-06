@@ -45,4 +45,15 @@ class UserManager extends AbstractEntityManager
 
         return '';
     }
+
+    public static function getProfilePictureByOwnerId(?int $ownerId): string
+    {
+        $userManager = new UserManager();
+        $user = $userManager->getUserById($ownerId);
+        if ($user) {
+            return $user->getPicture();
+        }
+
+        return '';
+    }
 }

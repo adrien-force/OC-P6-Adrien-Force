@@ -654,8 +654,14 @@ input:focus {
  * Book Detail Page
  */
 
+
+
 .detailBookPage .bgOverflow {
-    background: #FAF9F7;;
+    background: #FAF9F7;
+}
+
+body:has(.detailBookPage) {
+    background-color: #faf9f7;
 }
 
 .detailBookPage {
@@ -737,6 +743,8 @@ input:focus {
     min-height: 900px;
     height: auto;
     margin-left: -150px;
+    object-fit: cover;
+
 }
 
 .breadcrumb {
