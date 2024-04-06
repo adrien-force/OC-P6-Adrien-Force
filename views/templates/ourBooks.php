@@ -21,7 +21,7 @@
                     <a href="index.php?action=detailBook&id=<?php echo $book->getId() ?>
 ">
                         <div class="bookCard">
-                            <img src="ressources/assets/book1.png">
+                            <img src="<?php echo $book->getPicture(); ?>">
                             <h3>
                                 <?= $book->getTitle() ?>
                             </h3>
@@ -29,7 +29,7 @@
                                 <?= $book->getAuthor() ?>
                             </h4>
                             <h5>
-                                Vendu par : <?= $book->getOwner() ?>
+                                Vendu par : <?= $book->getOwnerId() ?>
                             </h5>
                         </div>
                     </a>
