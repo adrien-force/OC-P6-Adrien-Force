@@ -76,10 +76,68 @@ class UserController
             header("Location: index.php?action=signIn");
             exit;
         } else {
-            // If the form wasn't submitted, just render the sign-up page
             $view = new View("signUp");
             $view->render('signUp');
         }
+    }
+
+    public function signIn(): void
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            if (empty($email) || empty($password)) {
+                echo "Please fill in all fields.";
+                return;
+            }
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "Please enter a valid email address.";
+                return;
+            }
+
+            $userManager = new UserManager();
+
+            $user = $userManager->getUserByEmail($email);
+            if (!$user) {
+                echo "No user found with this email.";
+                return;
+            }
+
+            if (!password_verify($password, $user->getPassword())) {
+                echo "Incorrect password.";
+                return;
+            }
+
+            session_start();
+            $_SESSION['user'] = $user;
+
+            header("Location: index.php?action=showMyAccount");
+            exit;
+        } else {
+            $view = new View("signIn");
+            $view->render('signIn');
+        }
+    }
+
+    public function signOut(): void
+    {
+        $_SESSION = [];
+
+
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+
+        session_destroy();
+
+        header("Location: index.php");
+        exit;
     }
 
 }

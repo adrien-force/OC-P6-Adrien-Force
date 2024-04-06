@@ -71,4 +71,20 @@ class UserManager extends AbstractEntityManager
             'picture' => $user->getPicture()
         ]);
     }
+
+    public function getUserByEmail(string $email): ?User
+    {
+        $sql = <<<SQL
+    SELECT *
+    FROM user
+    WHERE email = :email
+    SQL;
+        $result = $this->db->query($sql, ['email' => $email]);
+        $user = $result->fetch();
+        if ($user) {
+            return new User($user);
+        }
+
+        return null;
+    }
 }

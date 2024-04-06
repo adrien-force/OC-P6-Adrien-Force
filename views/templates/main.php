@@ -20,27 +20,30 @@
 <body>
 <header>
     <div class="headerOverflow">
-    <nav>
-        <div class="leftNav">
-            <div>
-                <a href="index.php"> <img class="logo" src="ressources/assets/logo.png"> </a>
+        <nav>
+            <div class="leftNav">
+                <div>
+                    <a href="index.php"> <img class="logo" src="ressources/assets/logo.png"> </a>
+                </div>
+                <div>
+                    <a href="index.php"> Accueil</a>
+                    <a href="?action=ourBooks"> Nos livres à l'échange</a>
+                </div>
             </div>
-            <div>
-                <a href="index.php"> Accueil</a>
-                <a href="?action=ourBooks"> Nos livres à l'échange</a>
+            <div class="rightNav">
+                <a href="index.php?action=inbox">
+                    <i class="fa-regular fa-comment fa-flip-horizontal"></i>
+                    Messagerie
+                    <span class="msgCount">6</span>
+                </a>
+                <a href="index.php?action=myAccount"> <i class="fa-regular fa-user"></i> Mon compte</a>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <a href="index.php?action=signOut"> Déconnexion</a>
+                <?php else: ?>
+                    <a href="index.php?action=signIn"> Connexion</a>
+                <?php endif; ?>
             </div>
-        </div>
-        <div class="rightNav">
-            <a href="index.php?action=inbox">
-                <i class="fa-regular fa-comment fa-flip-horizontal"></i>
-                Messagerie
-                <span class="msgCount">6</span>
-            </a>
-            <a href="index.php?action=myAccount"> <i class="fa-regular fa-user"></i> Mon compte</a>
-            <a href="index.php?action=signIn"> Connexion</a>
-
-        </div>
-    </nav>
+        </nav>
     </div>
 </header>
 

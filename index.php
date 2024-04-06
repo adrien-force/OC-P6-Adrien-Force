@@ -61,6 +61,11 @@ try {
             $UserController->register();
             break;
 
+        case 'signOut':
+            $userController = new UserController();
+            $userController->signOut();
+            break;
+
 
         default:
             throw new Exception('Action non valide');
