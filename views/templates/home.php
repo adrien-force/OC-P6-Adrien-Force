@@ -35,55 +35,28 @@
             </h2>
 
             <div class="bookGrid">
-                <div class="bookCard">
-                    <img src="ressources/assets/book1.png">
-                    <h3>
-                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                    </h3>
-                    <h4>
-                        Auteur
-                    </h4>
-                    <h5>
-                        Vendu par : Nom de l'utilisateur
-                    </h5>
-                </div>
-                <div class="bookCard">
-                    <img src="ressources/assets/book1.png">
-                    <h3>
-                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                    </h3>
-                    <h4>
-                        Auteur
-                    </h4>
-                    <h5>
-                        Vendu par : Nom de l'utilisateur
-                    </h5>
-                </div>
-                <div class="bookCard">
-                    <img src="ressources/assets/book1.png">
-                    <h3>
-                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                    </h3>
-                    <h4>
-                        Auteur
-                    </h4>
-                    <h5>
-                        Vendu par : Nom de l'utilisateur
-                    </h5>
-                </div>
-                <div class="bookCard">
-                    <img src="ressources/assets/book1.png">
-                    <h3>
-                        Titre du livre tes tes tes tes tetvz dzgdjgqz hdzkhdz
-                    </h3>
-                    <h4>
-                        Auteur
-                    </h4>
-                    <h5>
-                        Vendu par : Nom de l'utilisateur
-                    </h5>
-                </div>
 
+                <?php
+                for ($i = 0; $i < 4; $i++) {
+                    if (isset($books[$i])) {
+                        $book = $books[$i];
+                        ?>
+                        <div class="bookCard">
+                            <img src="<?php echo $book->getPicture(); ?>">
+                            <h3>
+                                <?php echo $book->getTitle(); ?>
+                            </h3>
+                            <h4>
+                                <?php echo $book->getAuthor(); ?>
+                            </h4>
+                            <h5>
+                                Vendu par : <?php echo UserManager::getUsernameByOwnerId($book->getOwnerId());?>
+                            </h5>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
             </div>
 
             <a href="index.php" class="mainButton">

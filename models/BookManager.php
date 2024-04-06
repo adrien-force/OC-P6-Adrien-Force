@@ -17,6 +17,21 @@ class BookManager extends AbstractEntityManager
         return $books;
     }
 
+    public function getFourLastBooks(): array
+    {
+        $sql = <<<SQL
+        SELECT * FROM book ORDER BY id DESC LIMIT 4
+        SQL;
+        $result = $this->db->query($sql);
+        $books = [];
+
+        while ($book = $result->fetch()) {
+            $books[] = new Book($book);
+        }
+
+        return $books;
+    }
+
     function fakeBookArray(int $int): array
     {
         $books = [];
@@ -26,7 +41,6 @@ class BookManager extends AbstractEntityManager
             $book->setTitle('Title' . $i);
             $book->setAuthor('Author' . $i);
             $book->setDescription('Description' . $i);
-            $book->setPrintDate(new DateTime());
             $book->setOwner('Owner' . $i);
             $book->setAvailability('Availability' . $i);
             $books[] = $book;
@@ -38,8 +52,8 @@ class BookManager extends AbstractEntityManager
     public function addBook(Book $book): void
     {
         $sql = <<<SQL
-        INSERT INTO book(title, author, description, print_date, owner, availability)
-        VALUES(:title, :author, :description, :print_date, :owner, :availability)
+        INSERT INTO book(title, author, description, owner, availability, picture)
+        VALUES(:title, :author, :description, :owner, :availability, :picture)
         SQL;
         $this->db->query($sql, [
             'title' => $book->getTitle()

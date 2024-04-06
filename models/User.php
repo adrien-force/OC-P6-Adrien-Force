@@ -11,7 +11,7 @@ class User extends AbstractEntity
         $this->username = $username;
     }
 
-    public function getUsername(string $username): string
+    public function getUsername(): string
     {
         return $this->username;
     }

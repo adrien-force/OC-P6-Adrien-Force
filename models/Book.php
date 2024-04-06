@@ -5,10 +5,9 @@ class Book extends AbstractEntity
     private string $title;
     private string $author;
     private string $description;
-    private DateTime $printDate;
-    private string $owner; //FIXME : string for now but need a change to int -> gonna match userId later on
+    private int $owner_id;
     private string $availability;
-    private string $picturePath;
+    private string $picture;
 
     public function getTitle(): string
     {
@@ -40,29 +39,6 @@ class Book extends AbstractEntity
         $this->description = $description;
     }
 
-    public function getPrintDate(): DateTime
-    {
-        return $this->printDate;
-    }
-
-    public function setPrintDate(string|DateTime $printDate): void //FIXME : BDD Return a string,IDK WHY
-    {
-        if (is_string($printDate)) {
-            $printDate = new DateTime($printDate);
-        }
-        $this->printDate = $printDate;
-    }
-
-    public function getOwner(): string
-    {
-        return $this->owner;
-    }
-
-    public function setOwner(string $owner): void
-    {
-        $this->owner = $owner;
-    }
-
     public function getAvailability(): string
     {
         return $this->availability;
@@ -81,6 +57,26 @@ class Book extends AbstractEntity
     public function setPicturePath(string $picturePath): void
     {
         $this->picturePath = $picturePath;
+    }
+
+    public function getOwnerId(): int
+    {
+        return $this->owner_id;
+    }
+
+    public function setOwnerId(int $owner_id): void
+    {
+        $this->owner_id = $owner_id;
+    }
+
+    public function getPicture(): string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): void
+    {
+        $this->picture = $picture;
     }
 
 }
