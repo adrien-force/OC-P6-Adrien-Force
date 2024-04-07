@@ -1045,7 +1045,7 @@ body:has(.detailBookPage) {
     margin-top: 32px;
 }
 
-.modifyCard input {
+.modifyCard .modifyInput {
     border: 1px solid #F0F0F0;
     border-radius: 6px;
     width: 322px;
@@ -1113,19 +1113,20 @@ body:has(.detailBookPage) {
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
-    text-align: left;
     height: 130px;
     text-align: center;
     border-bottom: 1px SOLID #F5F3EF;
     border-top: 1px SOLID #F5F3EF;
     justify-content: center;
     align-items: center;
-
+    padding: 0 10px 0 10px;
 }
 
 .myAccountPageContent table img {
     width: 78px;
     height: 78px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 .myAccountPageContent table .availability {
@@ -1137,7 +1138,6 @@ body:has(.detailBookPage) {
     border-radius: 30px;
     padding: 7px 20px 7px 20px;
     color: #FFFFFF;
-
 }
 
 .available {

@@ -31,11 +31,6 @@ try {
             $userController->showSignUp();
             break;
 
-        case 'signIn':
-            $userController = new UserController();
-            $userController->showSignIn();
-            break;
-
         case 'myAccount':
             $userController = new UserController();
             $userController->showMyAccount();
@@ -66,6 +61,15 @@ try {
             $userController->signOut();
             break;
 
+        case 'signIn':
+            $userController = new UserController();
+            $userController->signIn();
+            break;
+
+        case 'modifyInfo':
+            $userController = new UserController();
+            $userController->modifyInfo();
+            break;
 
         default:
             throw new Exception('Action non valide');

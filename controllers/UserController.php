@@ -1,5 +1,8 @@
 <?php
 
+require_once 'models/BookManager.php';
+require_once 'models/User.php';
+
 class UserController
 {
     public function showLogin(): void
@@ -22,8 +25,20 @@ class UserController
 
     public function showMyAccount(): void
     {
-        $view = new View("My Account");
-        $view->render('myAccount');
+        if (!isset($_SESSION['userId'])) {
+            header("Location: index.php?action=signIn");
+            exit;
+        }
+
+        $bookManager = new BookManager();
+        $userManager = new UserManager();
+
+        $user = $userManager->getUserById($_SESSION['userId']);
+        $books = $bookManager->getBooksByOwnerId(1);
+
+        // Render the view and pass the data
+        $view = new View("myAccount");
+        $view->render( 'myAccount', ['user' => $user, 'books' => $books]);
     }
 
     public function showAccount(): void
@@ -68,7 +83,8 @@ class UserController
                 'email' => $email,
                 'password' => $hashedPassword,
                 'role' => 'user',
-                'picture' => 'ressources/assets/default.png'
+                'picture' => 'ressources/assets/default.png',
+                'signUpDate' => new DateTime('now')
             ]);
 
             $userManager->addUser($user);
@@ -83,37 +99,44 @@ class UserController
 
     public function signIn(): void
     {
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = $_POST['email'];
             $password = $_POST['password'];
 
             if (empty($email) || empty($password)) {
-                echo "Please fill in all fields.";
-                return;
+                $_SESSION['error'] = "Veuillez remplir les 3 champs.";
+                header("Location: index.php?action=signIn");
+                exit;
             }
 
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                echo "Please enter a valid email address.";
-                return;
+                $_SESSION['error'] = "Veuillez renseigner une adresse valide.";
+                header("Location: index.php?action=signIn");
+                exit;
             }
 
             $userManager = new UserManager();
 
             $user = $userManager->getUserByEmail($email);
             if (!$user) {
-                echo "No user found with this email.";
-                return;
+                $_SESSION['error'] = "Aucun utilisateur n'est associé à cet email.";
+                header("Location: index.php?action=signIn");
+                exit;
             }
 
             if (!password_verify($password, $user->getPassword())) {
-                echo "Incorrect password.";
-                return;
+                $_SESSION['error'] = "Mot de passe incorrect.";
+                header("Location: index.php?action=signIn");
+                exit;
             }
-
+            session_destroy();
             session_start();
-            $_SESSION['user'] = $user;
 
-            header("Location: index.php?action=showMyAccount");
+            //need to ensure that the user object is not incomplete
+            $_SESSION['userId'] = $user->getId();
+
+            header("Location: index.php?action=myAccount");
             exit;
         } else {
             $view = new View("signIn");
@@ -138,6 +161,47 @@ class UserController
 
         header("Location: index.php");
         exit;
+    }
+
+    public function modifyInfo()
+    {
+        $userManager = new UserManager();
+        $user = $userManager->getUserById($_SESSION['userId']);
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            if (empty($username) || empty($email) || empty($password)) {
+                echo "Please fill in all fields.";
+                return;
+            }
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "Please enter a valid email address.";
+                return;
+            }
+
+            if (strlen($password) < 8) {
+                echo "Your password must be at least 8 characters long.";
+                return;
+            }
+
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            $user->setUsername($username);
+            $user->setEmail($email);
+            $user->setPassword($hashedPassword);
+
+            $userManager->updateUser($user);
+
+            header("Location: index.php?action=myAccount");
+            exit;
+        } else {
+            $view = new View("modifyInfo");
+            $view->render('modifyInfo', ['user' => $user]);
+        }
     }
 
 }

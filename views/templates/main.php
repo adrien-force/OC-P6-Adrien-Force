@@ -37,7 +37,7 @@
                     <span class="msgCount">6</span>
                 </a>
                 <a href="index.php?action=myAccount"> <i class="fa-regular fa-user"></i> Mon compte</a>
-                <?php if (isset($_SESSION['user'])): ?>
+                <?php if (isset($_SESSION['userId'])): ?>
                     <a href="index.php?action=signOut"> Déconnexion</a>
                 <?php else: ?>
                     <a href="index.php?action=signIn"> Connexion</a>

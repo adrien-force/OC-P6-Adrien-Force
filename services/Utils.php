@@ -32,6 +32,20 @@ class Utils
         return "onclick=\"return confirm('$message');\"";
     }
 
+    // Methode permettant de renvoyer la difference entre une date et maintenant, en renvoyant le nb de jour si la date est inferieure à 1 mois, sinon la date en mois si la date est inferieur a 1 an et sinon le nombre d'année
+    public static function dateDiff(DateTime $date): string
+    {
+        $now = new DateTime();
+        $interval = $now->diff($date);
+        if ($interval->days < 30) {
+            return $interval->days . ' jours';
+        } elseif ($interval->days < 365) {
+            return $interval->m . ' mois';
+        } else {
+            return $interval->y . ' ans';
+        }
+    }
+
     public static function format(string $string): string
     {
         // Etape 1, on protège le texte avec htmlspecialchars.

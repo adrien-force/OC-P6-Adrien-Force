@@ -1,5 +1,6 @@
 <?php
 
+
 class User extends AbstractEntity
 {
     private string $username;
@@ -7,6 +8,7 @@ class User extends AbstractEntity
     private string $password;
     private string $role;
     private string $picture;
+    private datetime $signUpDate;
 
     public function setUsername(string $username): void
     {
@@ -56,5 +58,25 @@ class User extends AbstractEntity
     public function setEmail(string $email): void
     {
         $this->email = $email;
+    }
+
+    public function getSignUpDate(): datetime
+    {
+
+        return $this->signUpDate;
+    }
+
+    public function setSignUpDate(string | datetime $signUpDate): void
+    {
+        if(is_string($signUpDate)){
+            $this->signUpDate = new DateTime($signUpDate);
+        } else {
+            $this->signUpDate = $signUpDate;
+        }
+    }
+
+    public function getHowManyBookByUser($userId) {
+        $bookManager = new BookManager();
+        return $bookManager->getHowManyBooksById($userId);
     }
 }

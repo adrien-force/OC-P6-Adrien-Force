@@ -18,15 +18,14 @@ class UserManager extends AbstractEntityManager
         return null;
     }
 
-    //TODO : Username should be unique, this need to be checked on sign up
-    public function getUserById(int $ownerId)
+    public function getUserById(int $id)
     {
         $sql = <<<SQL
         SELECT * 
         FROM user 
         WHERE id = :id
         SQL;
-        $result = $this->db->query($sql, ['id' => $ownerId]);
+        $result = $this->db->query($sql, ['id' => $id]);
         $user = $result->fetch();
         if ($user) {
             return new User($user);
@@ -60,15 +59,16 @@ class UserManager extends AbstractEntityManager
     public function addUser(User $user): void
     {
         $sql = <<<SQL
-    INSERT INTO user (username, email, password, role, picture)
-    VALUES (:username, :email, :password, :role, :picture)
+    INSERT INTO user (username, email, password, role, picture, signUpDate)
+    VALUES (:username, :email, :password, :role, :picture, :signUpDate)
     SQL;
         $this->db->query($sql, [
             'username' => $user->getUsername(),
             'email' => $user->getEmail(),
             'password' => $user->getPassword(),
             'role' => $user->getRole(),
-            'picture' => $user->getPicture()
+            'picture' => $user->getPicture(),
+            'signUpDate' => $user->getSignUpDate(),
         ]);
     }
 
@@ -86,5 +86,20 @@ class UserManager extends AbstractEntityManager
         }
 
         return null;
+    }
+
+    public function updateUser(?User $user)
+    {
+        $sql = <<<SQL
+        UPDATE user
+        SET username = :username, email = :email, password = :password
+        WHERE id = :id
+        SQL;
+        $this->db->query($sql, [
+            'username' => $user->getUsername(),
+            'email' => $user->getEmail(),
+            'password' => $user->getPassword(),
+            'id' => $user->getId()
+        ]);
     }
 }
