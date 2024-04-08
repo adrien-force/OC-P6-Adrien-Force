@@ -1315,6 +1315,33 @@ body:has(.accountPage) {
     margin-top: 40px;
 }
 
+.myAccountBooks td {
+    /*width: 25%;*/
+    padding: 10px;
+}
+
+
+.nextPage .fa-chevron-right {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.nextPage .fa-chevron-left {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.td-20p {
+    width: 350px;
+}
+
+.thin {
+    width: 10px;
+}
+
+
+
+
 
 /*
 Modify Book Page

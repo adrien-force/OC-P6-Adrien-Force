@@ -11,6 +11,7 @@
                 <div class="conversationSide">
                     <div class="conversationSideTitle"><h2> Messagerie </h2></div>
                     <div class="conversations">
+<!--                        TODO conversation selection color-->
                         <?php
                         foreach ($conversations as $otherUserId => $conversation) {
                             $lastMessage = $conversation['lastMessage'];

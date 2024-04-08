@@ -34,7 +34,7 @@ class UserController
         $userManager = new UserManager();
 
         $user = $userManager->getUserById($_SESSION['userId']);
-        $books = $bookManager->getBooksByOwnerId(1);
+        $books = $bookManager->getBooksByOwnerId($_SESSION['userId']);
 
         // Render the view and pass the data
         $view = new View("myAccount");
@@ -43,8 +43,14 @@ class UserController
 
     public function showAccount(): void
     {
+        $userManager = new UserManager();
+        $bookManager = new BookManager();
+        $user = $userManager->getUserById($_GET['id']);
+        $books = $bookManager->getBooksByOwnerId($_GET['id']);
+
+
         $view = new View("Account");
-        $view->render('account');
+        $view->render('account', ['user' => $user, 'books' => $books]);
     }
 
     public function register(): void
