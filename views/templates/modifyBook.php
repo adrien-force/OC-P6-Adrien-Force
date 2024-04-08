@@ -1,5 +1,5 @@
 <?php /* Cette page permet à l'utilisateur de modifier les informations d'un livre */ ?>
-
+<?php if(isset($book)){?>
 <div class="modifyBookPage">
     <div class="bgOverflow">
         <div class="breadcrumb"> <h5> <i class="fa-solid fa-arrow-left"></i> retour</h5></div>
@@ -38,3 +38,4 @@
         </div>
     </div>
 </div>
+<?php } ?>

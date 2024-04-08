@@ -1,6 +1,5 @@
-<?php
-/** Page affichant le detail d'une livre */
-?>
+<?php /** Page affichant le detail d'une livre */?>
+<?php if(isset($book)){?>
 <div class="detailBookPage">
     <div class="breadcrumb"> Nos livres > <?= $book->getTitle() ?> </div>
     <div class="bgOverflow">
@@ -26,3 +25,4 @@
     </div>
     </div>
 </div>
+<?php } ?>

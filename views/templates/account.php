@@ -1,4 +1,5 @@
 <?php /* Page affichant les informations d'un compte et la liste des livres d'un utilisateur*/ ?>
+<?php if(isset($user)){?>
 <div class="accountPage">
     <div class="bgOverflow">
         <div class="accountPageContent">
@@ -62,3 +63,5 @@
 
     </div>
 </div>
+<?php } ?>
+

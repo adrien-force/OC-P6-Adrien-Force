@@ -1,6 +1,7 @@
 <?php /* Page affichant les informations personnelles et la liste des livres de l'utilisateur*/
 require_once 'models/User.php'
 ?>
+<?php if(isset($user)){?>
 <div class="myAccountPage">
     <div class="bgOverflow">
         <div class="myAccountPageContent">
@@ -68,3 +69,5 @@ require_once 'models/User.php'
 
     </div>
 </div>
+<?php } ?>
+
