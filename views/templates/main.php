@@ -64,8 +64,8 @@
         </div>
         <div class="rightNav">
             <a href="index.php"> Politique de confidentialité</a>
-            <a href="index.php?action=modifyBook"> Mentions légales</a>  <!-- FIXME: Link to test-->
-            <a href="index.php?action=account"> Tom Troc © </a> <!--FIXME : link to test accountpage -->
+            <a href="index.php"> Mentions légales</a>
+            <a href="index.php"> Tom Troc © </a>
             <a href="index.php"> <img class="logoTT" src="ressources/assets/logoTT.png"> </a>
         </div>
     </nav>

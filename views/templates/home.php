@@ -41,6 +41,7 @@
                     if (isset($books[$i])) {
                         $book = $books[$i];
                         ?>
+                        <a href="?action=detailBook&id=<?=$book->getId()?>">
                         <div class="bookCard">
                             <img src="<?php echo $book->getPicture(); ?>">
                             <h3>
@@ -53,13 +54,14 @@
                                 Vendu par : <?php echo UserManager::getUsernameByOwnerId($book->getOwnerId());?>
                             </h5>
                         </div>
+                        </a>
                         <?php
                     }
                 }
                 ?>
             </div>
 
-            <a href="index.php" class="mainButton">
+            <a href="?action=ourBooks" class="mainButton">
                 Voir tous les livres
             </a>
 
@@ -78,12 +80,12 @@
             <div class="infoCard"> Proposez un échange et discutez avec d'autres passionnés de lecture.</div>
         </div>
 
-        <a class="mainButton clearButton" href="/index.php"> Voir tous les livres </a>
+        <a class="mainButton clearButton" href="?action=ourBooks"> Voir tous les livres </a>
 
     </div>
 
     <div class="section4">
-        <img src="ressources/assets/homeMidBanner.png"> <!-- TODO override bg -->
+        <img src="ressources/assets/homeMidBanner.png">
     </div>
 
     <div class="section5">
