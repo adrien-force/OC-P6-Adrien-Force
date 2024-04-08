@@ -1035,6 +1035,10 @@ body:has(.detailBookPage) {
     color: #292929;
 }
 
+.myAccountCard form {
+    width: 67%;
+}
+
 .modifyCard h4 {
     font-family: Inter;
     font-size: 14px;
