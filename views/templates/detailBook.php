@@ -20,7 +20,7 @@
                 <h5> <?php echo UserManager::getUsernameByOwnerId($book->getOwnerId());?> </h5>
             </div>
             </div>
-            <a class="mainButton">Envoyer un message</a>
+            <a href="?action=showInbox&receiver_id=<?=$book->getOwnerId()?>" class="mainButton">Envoyer un message</a>
         </div>
     </div>
     </div>
