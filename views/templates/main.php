@@ -31,10 +31,14 @@
                 </div>
             </div>
             <div class="rightNav">
-                <a href="index.php?action=inbox">
+                <a href="index.php?action=showInbox">
                     <i class="fa-regular fa-comment fa-flip-horizontal"></i>
                     Messagerie
-                    <span class="msgCount">6</span>
+                    <span class="msgCount"><?php
+                        $messageManager = new MessageManager();
+                        $unreadMessagesCount = $messageManager->countUnreadMessages($_SESSION['userId']);
+                        echo$unreadMessagesCount; ?>
+                    </span>
                 </a>
                 <a href="index.php?action=myAccount"> <i class="fa-regular fa-user"></i> Mon compte</a>
                 <?php if (isset($_SESSION['userId'])): ?>

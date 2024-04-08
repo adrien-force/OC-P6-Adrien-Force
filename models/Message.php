@@ -2,11 +2,32 @@
 
 class Message extends AbstractEntity
 {
+    private int $senderId;
+    private int $receiverId;
     private string $content;
-    private int $idFrom;
-    private int $idTo;
-    private DateTime $postDate;
-    private string $status;
+    private bool $isRead;
+    private DateTime $sentDatetime;
+
+
+    public function getSenderId(): int
+    {
+        return $this->senderId;
+    }
+
+    public function setSenderId(int $senderId): void
+    {
+        $this->senderId = $senderId;
+    }
+
+    public function getReceiverId(): int
+    {
+        return $this->receiverId;
+    }
+
+    public function setReceiverId(int $receiverId): void
+    {
+        $this->receiverId = $receiverId;
+    }
 
     public function getContent(): string
     {
@@ -18,46 +39,29 @@ class Message extends AbstractEntity
         $this->content = $content;
     }
 
-    public function getIdFrom(): int
+    public function getIsRead(): int
     {
-        return $this->idFrom;
+        return $this->isRead;
     }
 
-    public function setIdFrom(int $idFrom): void
+    public function setIsRead(int $isRead): void
     {
-        $this->idFrom = $idFrom;
+        $this->isRead = $isRead;
     }
 
-    public function getIdTo(): int
+    public function getSentDatetime(): DateTime
     {
-        return $this->idTo;
+        return $this->sentDatetime;
     }
 
-    public function setIdTo(int $idTo): void
+    public function setSentDatetime(DateTime | string $sentDatetime): void
     {
-        $this->idTo = $idTo;
+        if (is_string($sentDatetime)) {
+            $this->sentDatetime = new DateTime($sentDatetime);
+            return;
+        }
+        $this->sentDatetime = $sentDatetime;
     }
-
-    public function getPostDate(): DateTime
-    {
-        return $this->postDate;
-    }
-
-    public function setPostDate(DateTime $postDate): void
-    {
-        $this->postDate = $postDate;
-    }
-
-    public function getStatus(): string
-    {
-        return $this->status;
-    }
-
-    public function setStatus(string $status): void
-    {
-        $this->status = $status;
-    }
-
 }
 
 

@@ -46,7 +46,7 @@ try {
             $bookController->showModify();
             break;
 
-        case 'inbox':
+        case 'showInbox':
             $messageController = new MessageController();
             $messageController->showInbox();
             break;
@@ -74,6 +74,11 @@ try {
         case 'updateBook':
             $bookController = new BookController();
             $bookController->updateBook();
+            break;
+
+        case 'sendMessage':
+            $messageController = new MessageController();
+            $messageController->sendMessage();
             break;
 
         default:
