@@ -71,6 +71,11 @@ try {
             $userController->modifyInfo();
             break;
 
+        case 'updateBook':
+            $bookController = new BookController();
+            $bookController->updateBook();
+            break;
+
         default:
             throw new Exception('Action non valide');
     }

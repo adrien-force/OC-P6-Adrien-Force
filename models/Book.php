@@ -49,16 +49,6 @@ class Book extends AbstractEntity
         $this->availability = $availability;
     }
 
-    public function getPicturePath(): string
-    {
-        return $this->picturePath;
-    }
-
-    public function setPicturePath(string $picturePath): void
-    {
-        $this->picturePath = $picturePath;
-    }
-
     public function getOwnerId(): int
     {
         return $this->owner_id;
