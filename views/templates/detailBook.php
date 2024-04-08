@@ -16,7 +16,7 @@
             <div class="owner">
                 <h3> Propriétaire </h3>
             <div class="ownerBubble">
-                <img src="<?= UserManager::getProfilePictureByOwnerId($book->getOwnerId())?>>">
+                <img src="<?=UserManager::getProfilePictureByOwnerId($book->getOwnerId());?>">
                 <h5> <?php echo UserManager::getUsernameByOwnerId($book->getOwnerId());?> </h5>
             </div>
             </div>
