@@ -11,23 +11,18 @@
                 <div class="conversationSide">
                     <div class="conversationSideTitle"><h2> Messagerie </h2></div>
                     <div class="conversations">
-<!--                        TODO conversation selection color-->
                         <?php
                         foreach ($conversations as $otherUserId => $conversation) {
-                            $lastMessage = $conversation['lastMessage'];
-                            $conversationPartnerId =  UserManager::getUsernameByOwnerId(($conversation['conversationPartnerId']));
-                            $time = $conversation['time'];
-                            $last_message = $conversation['last_message'];
                             ?>
-                            <a href="?action=showInbox&receiver_id=<?= $conversation['conversationPartnerId'] ?>" class="conversation <?php echo $selectedConversation == $otherUserId ? 'selected' : '' ?>">
+                            <a href="?action=showInbox&receiver_id=<?= $conversation['conversationPartnerId'] ?>" class="conversation <?php echo $conversation['conversationPartnerId'] == $_GET['receiver_id'] ? 'selected' : '' ?>">
                                 <img src="<?php echo UserManager::getProfilePictureByOwnerId($conversation['conversationPartnerId']); ?>">
                                 <div class="conversationInfos">
                                     <div class="conversationInfoTop">
-                                        <h3 class="conversationPseudo"> <?php echo $conversationPartnerId; ?> </h3>
-                                        <h3 class="conversationTime"> <?php echo $time; ?> </h3>
+                                        <h3 class="conversationPseudo"> <?php echo UserManager::getUsernameByOwnerId(($conversation['conversationPartnerId'])); ?> </h3>
+                                        <h3 class="conversationTime"> <?php echo $conversation['time']; ?> </h3>
                                     </div>
                                     <div class="conversationInfoBot">
-                                        <h4> <?php echo $last_message; ?> </h4>
+                                        <h4> <?php echo $conversation['lastMessage']; ?> </h4>
                                     </div>
                                 </div>
                             </a>
@@ -44,7 +39,7 @@
                         <?php foreach ($selectedConversation['messages'] as $message): ?>
                             <div class="<?php echo $message->getSenderId() == $_SESSION['userId'] ? 'messageSentBox' : 'messageReceivedBox' ?>">
                                 <div class="messageSentInfos">
-                                    <h3> <?php echo $message->getSentDatetime()->format('Y-m-d H:i:s'); ?> </h3>
+                                    <h3> <?php echo $message->getSentDatetime()->format('d.m H:i'); ?> </h3>
                                 </div>
                                 <div class="messageSentContent">
                                     <h4> <?php echo $message->getContent(); ?> </h4>

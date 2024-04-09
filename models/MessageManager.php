@@ -27,7 +27,7 @@ class MessageManager extends AbstractEntityManager
                     'messages' => [],
                     'lastMessage' => $message->getContent(),
                     'conversationPartnerId' => $otherUserId,
-                    'time' => $message->getSentDatetime()->format('Y-m-d H:i:s'),
+                    'time' => $message->getSentDatetime()->format('H:i'),
                     'last_message' => $message->getContent()
                 ];
             }
@@ -50,7 +50,7 @@ class MessageManager extends AbstractEntityManager
             'receiverId' => $message->getReceiverId(),
             'content' => $message->getContent(),
             'isRead' => $message->getIsRead(),
-            'sentDatetime' => $message->getSentDatetime()->format('Y-m-d H:i:s')
+            'sentDatetime' => $message->getSentDatetime()
         ]);
     }
 
