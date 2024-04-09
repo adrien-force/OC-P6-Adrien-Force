@@ -152,6 +152,7 @@ class BookController
         }
 
         $bookManager->deleteBook($id);
+        unlink($book->getPicture());
 
         header('Location: ?action=myAccount');
         exit();
