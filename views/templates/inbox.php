@@ -14,7 +14,7 @@
                         <?php
                         foreach ($conversations as $otherUserId => $conversation) {
                             ?>
-                            <a href="?action=showInbox&receiver_id=<?= $conversation['conversationPartnerId'] ?>" class="conversation <?php echo $conversation['conversationPartnerId'] == $_GET['receiver_id'] ? 'selected' : '' ?>">
+                            <a href="?action=showInbox&receiver_id=<?= $conversation['conversationPartnerId'] ?>" class="conversation <?php if (isset($_GET['receiver_id'])) { echo $conversation['conversationPartnerId'] == $_GET['receiver_id'] ? 'selected' : '' ;}?>">
                                 <img src="<?php echo UserManager::getProfilePictureByOwnerId($conversation['conversationPartnerId']); ?>">
                                 <div class="conversationInfos">
                                     <div class="conversationInfoTop">
