@@ -22,7 +22,7 @@
                                         <h3 class="conversationTime"> <?php echo $conversation['time']; ?> </h3>
                                     </div>
                                     <div class="conversationInfoBot">
-                                        <h4> <?php echo $conversation['lastMessage']; ?> </h4>
+                                        <h4 class="lastMessage"> <?php echo $conversation['lastMessage']; ?> </h4>
                                     </div>
                                 </div>
                             </a>

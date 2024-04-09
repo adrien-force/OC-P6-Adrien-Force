@@ -1621,6 +1621,11 @@ Inbox Page
     margin-top: 10px;
 }
 
+.conversationInfoBot .lastMessage {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .conversationInfoBot h4 {
     font-family: Inter;
     font-size: 12px;

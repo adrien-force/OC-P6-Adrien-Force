@@ -50,7 +50,7 @@ class MessageManager extends AbstractEntityManager
             'receiverId' => $message->getReceiverId(),
             'content' => $message->getContent(),
             'isRead' => $message->getIsRead(),
-            'sentDatetime' => $message->getSentDatetime()
+            'sentDatetime' => (new DateTime('now'))->format('Y-m-d H:i:s')
         ]);
     }
 

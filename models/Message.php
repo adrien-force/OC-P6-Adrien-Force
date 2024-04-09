@@ -51,6 +51,9 @@ class Message extends AbstractEntity
 
     public function getSentDatetime(): DateTime
     {
+        if (empty($this->sentDatetime)) {
+            return new DateTime('now');
+        }
         return $this->sentDatetime;
     }
 
