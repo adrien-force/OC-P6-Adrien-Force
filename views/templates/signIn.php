@@ -2,13 +2,6 @@
 /* Page permettant la connexion d'un utilisateur en demandant l'email et le mot de passe*/
 ?>
 
-<?php if (isset($_SESSION['error'])): ?>
-    <div class="alert alert-danger">
-        <?= $_SESSION['error']; ?>
-    </div>
-    <?php unset($_SESSION['error']); ?>
-<?php endif; ?>
-
 <div class="bgOverflow">
     <div class="signUpPage">
         <div class="signUpPageContent">
@@ -21,6 +14,12 @@
                 <div class="signUpFormBox">
                     <h4>Mot de passe</h4>
                     <input type="password" name="password" placeholder="">
+                    <?php if (isset($_SESSION['error'])): ?>
+                        <div class="signInError">
+                            <?= $_SESSION['error']; ?>
+                        </div>
+                        <?php unset($_SESSION['error']); ?>
+                    <?php endif; ?>
                 </div>
                 <input type="submit" class="mainButton" value="Se connecter">
             </form>
