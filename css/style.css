@@ -768,6 +768,10 @@ body:has(.detailBookPage) {
     margin-top: 40px;
 }
 
+.breadcrumb a {
+    margin-right: 5px;
+}
+
 .detailBookContent {
     display: flex;
     flex-direction: row;
@@ -1156,6 +1160,7 @@ body:has(.detailBookPage) {
 
 .unavailable {
     background-color: #C56D6D;
+    text-wrap: none;
 }
 
 .myAccountPageContent .editButton {
@@ -1172,6 +1177,7 @@ body:has(.detailBookPage) {
 .italic {
     font-style: italic;
 }
+
 
 /*
  Account Page
@@ -1291,6 +1297,7 @@ body:has(.accountPage) {
 
 .unavailable {
     background-color: #C56D6D;
+    white-space: nowrap;
 }
 
 .accountPage .myAccountCard {
@@ -1301,6 +1308,7 @@ body:has(.accountPage) {
 
 .accountPageContent .myAccountBooks {
     margin : 0px;
+    min-width: 784px;
 }
 
 .accountPageContent .mainButton {
@@ -1320,15 +1328,25 @@ body:has(.accountPage) {
     padding: 10px;
 }
 
+.previousPage {
+    position: relative;
+    right: 60px;
+}
 
-.nextPage .fa-chevron-right {
-    margin-right: 10px;
+.nextPage {
+    position: relative;
+    left: 45px;
+
+}
+
+.fa-chevron-right {
     font-size: 16px;
 }
 
-.nextPage .fa-chevron-left {
-    margin-left: 10px;
+
+.fa-chevron-left {
     font-size: 16px;
+
 }
 
 .td-20p {
@@ -1459,7 +1477,7 @@ Modify Book Page
     height: 488px;
     margin: 0px;
     min-height: 488px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .modifyBookPage input {

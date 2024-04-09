@@ -9,7 +9,6 @@
             <div class="accountCard">
                 <div class="myAccountCard userCard">
                     <img src="ressources/assets/hamza.png">
-                    <a> modifier </a>
                     <div class="separationLine"></div>
                     <h2> <?= $user->getUsername()?> </h2>
                     <h3> Membre depuis <?= Utils::dateDiff($user->getSignUpDate()) ?> </h3>
@@ -21,12 +20,10 @@
             </div>
             <table class="myAccountBooks">
                 <tr>
-                    <th> <a class="nextPage"href="?action=account&id=<?=$_GET['id']?>&page=<?=$page - 1; ?>"><i class="fa-solid fa-chevron-left"></i></a> </th>
-                    <th> PHOTO </th>
+                    <th> <a class="previousPage"href="?action=account&id=<?=$_GET['id']?>&page=<?=$page - 1; ?>"><i class="fa-solid fa-chevron-left"></i></a> PHOTO </th>
                     <th> TITRE</th>
                     <th> AUTEUR</th>
-                    <th> DESCRIPTION </th>
-                    <th> <a class="nextPage"href="?action=account&id=<?=$_GET['id']?>&page=<?=$page + 1; ?>"><i class="fa-solid fa-chevron-right"></i></a> </th>
+                    <th>DESCRIPTION <a class="nextPage"href="?action=account&id=<?=$_GET['id']?>&page=<?=$page + 1; ?>"><i class="fa-solid fa-chevron-right"></i></a></th>
                 </tr>
                 <?php
 
@@ -46,12 +43,10 @@
 
                 foreach($availableBooks as $book): ?>
                     <tr>
-                        <td class="thin"></td>
                         <td class="td-20p"> <a href="?action=detailBook&id=<?=$book->getId()?>"><img src="<?php echo $book->getPicture(); ?>"></a></td>
                         <td class="td-20p"> <?php echo $book->getTitle(); ?> </td>
                         <td class="td-20p"> <?php echo $book->getAuthor(); ?> </td>
                         <td class="italic td-20p"> <?php echo substr($book->getDescription(), 0, 100)."..."; ?> </td>
-                        <td class="thin"></td>
                     </tr>
                 <?php endforeach; ?>
 

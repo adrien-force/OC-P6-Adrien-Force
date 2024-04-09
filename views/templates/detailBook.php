@@ -1,7 +1,7 @@
 <?php /** Page affichant le detail d'une livre */?>
 <?php if(isset($book)){?>
 <div class="detailBookPage">
-    <div class="breadcrumb"> Nos livres > <?= $book->getTitle() ?> </div>
+    <div class="breadcrumb"> <a href="?action=ourBooks">Nos livres >  </a> <?= "  ".$book->getTitle() ?> </div>
     <div class="bgOverflow">
     <div class="detailBookContent">
         <div class="photoSide">

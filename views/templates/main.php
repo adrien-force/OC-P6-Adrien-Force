@@ -31,13 +31,18 @@
                 </div>
             </div>
             <div class="rightNav">
+                <?php if(isset($_SESSION['userId'])){?>
                 <a href="index.php?action=showInbox">
+                    <?php } else {?>
+                    <a href="index.php?action=signIn">
+                    <?php }?>
                     <i class="fa-regular fa-comment fa-flip-horizontal"></i>
                     Messagerie
+                    <?php if(isset($_SESSION['userId'])){?>
                     <span class="msgCount"><?php
                         $messageManager = new MessageManager();
                         $unreadMessagesCount = $messageManager->countUnreadMessages($_SESSION['userId']);
-                        echo$unreadMessagesCount; ?>
+                        echo$unreadMessagesCount; }?>
                     </span>
                 </a>
                 <a href="index.php?action=myAccount"> <i class="fa-regular fa-user"></i> Mon compte</a>

@@ -46,7 +46,7 @@ class UserController
         $userManager = new UserManager();
         $bookManager = new BookManager();
         $user = $userManager->getUserById($_GET['id']);
-        $books = $bookManager->getBooksByOwnerId($_GET['id']);
+        $books = $bookManager->getAvailableBooksByOwnerId($_GET['id']);
 
 
         $view = new View("Account");

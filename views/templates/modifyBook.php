@@ -2,7 +2,7 @@
 <?php if(isset($book)){?>
 <div class="modifyBookPage">
     <div class="bgOverflow">
-        <div class="breadcrumb"> <h5> <i class="fa-solid fa-arrow-left"></i> retour</h5></div>
+        <div class="breadcrumb"> <h5> <a href="?action=myAccount"><i class="fa-solid fa-arrow-left"></i> retour</h5></a></div>
         <div class="title"><h1> Modifier les informations </h1></div>
         <div class="modifyBookContent">
             <div class="photoSide">
