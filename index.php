@@ -81,6 +81,21 @@ try {
             $messageController->sendMessage();
             break;
 
+        case 'showAddBook':
+            $bookController = new BookController();
+            $bookController->showAddBook();
+            break;
+
+        case 'addBook':
+            $bookController = new BookController();
+            $bookController->addBook();
+            break;
+
+        case 'deleteBook':
+            $bookController = new BookController();
+            $bookController->deleteBook();
+            break;
+
         default:
             throw new Exception('Action non valide');
     }

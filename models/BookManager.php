@@ -49,19 +49,13 @@ class BookManager extends AbstractEntityManager
     }
 
 
-    public function addBook(Book $book): void
+    public function addBook($title, $author, $description, $ownerId, $availability, $coverPath): void
     {
         $sql = <<<SQL
-        INSERT INTO book(title, author, description, owner, availability, picture)
-        VALUES(:title, :author, :description, :owner, :availability, :picture)
+        INSERT INTO book (title, author, description, owner_id, availability, picture) VALUES (:title, :author, :description, :ownerId, :availability, :coverPath)
         SQL;
-        $this->db->query($sql, [
-            'title' => $book->getTitle()
-
-        ]);
-
+        $this->db->query($sql, ['title' => $title, 'author' => $author, 'description' => $description, 'ownerId' => $ownerId, 'availability' => $availability, 'coverPath' => $coverPath]);
     }
-
     public function getBookById(int $id): ?Book
     {
         $sql = <<<SQL
@@ -141,5 +135,13 @@ class BookManager extends AbstractEntityManager
             'availability' => $availability,
             'id' => $id
         ]);
+    }
+
+    public function deleteBook(int $id)
+    {
+        $sql = <<<SQL
+        DELETE FROM book WHERE id = :id
+        SQL;
+        $this->db->query($sql, ['id' => $id]);
     }
 }

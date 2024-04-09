@@ -80,5 +80,41 @@ class Utils
         return $_REQUEST[$variableName] ?? $defaultValue;
     }
 
+    public static function uploadFile($file, $target_dir, $rename): string
+    {
+        $target_file = $target_dir . basename($file["name"]);
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        $check = getimagesize($file["tmp_name"]);
+        if ($check === false) {
+            throw new Exception("File is not an image.");
+        }
+
+        if (file_exists($target_file)) {
+            throw new Exception("Sorry, file already exists.");
+        }
+
+        if ($file["size"] > 500000) {
+            throw new Exception("Sorry, your file is too large.");
+        }
+
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif") {
+            throw new Exception("Sorry, only JPG, JPEG, PNG & GIF files are allowed.");
+        }
+
+        if (!move_uploaded_file($file["tmp_name"], $target_file)) {
+            throw new Exception("Sorry, there was an error uploading your file.");
+        }
+
+        if ($rename) {
+            $newName = $target_dir . $rename . '_' . uniqid() . '.' . $imageFileType;
+            rename($target_file, $newName);
+            $target_file = $newName;
+        }
+
+        return $target_file;
+    }
+
 
 }

@@ -17,6 +17,8 @@ require_once 'models/User.php'
                     <h3> Membre depuis <?= Utils::dateDiff($user->getSignUpDate()) ?> </h3>
                     <h4> BIBLIOTHEQUE </h4>
                     <h3 class="darkText">  <i class="fa-solid fa-book-open"></i> <?= $user->getHowManyBookByUser($user->getId()) ?> livres </h3>
+                    <a href="?action=showAddBook" class="mainButton clearButton"> Ajouter un livre </a>
+
 
                 </div>
                 <div class="myAccountCard modifyCard">
@@ -60,7 +62,7 @@ require_once 'models/User.php'
                         <td> <?php echo $book->getAuthor(); ?> </td>
                         <td class="italic"> <?php echo $book->getDescription(); ?> </td>
                         <td class="padding"> <span class="availability <?php if($book->getAvailability() === "disponible"){ echo "available";}else{echo "unavailable";}; ?>"><?php echo $book->getAvailability(); ?></span></td>
-                        <td><a href="index.php?action=modifyBook&id=<?=$book->getId()?>" class="editButton">Éditer</a><a onclick="<?=Utils::askConfirmation('Are you sure you want to delete this book?')?>" href="index.php?action=deleteBook&id=<?=$book->getId()?>" class="deleteButton">Supprimer</a></td>
+                        <td><a href="index.php?action=modifyBook&id=<?=$book->getId()?>" class="editButton">Éditer</a><a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre?')" href="index.php?action=deleteBook&id=<?=$book->getId()?>" class="deleteButton">Supprimer</a></td>
 <!--                        TODO Delete book not working yet, modify link here later-->
                     </tr>
                 <?php endforeach; ?>
