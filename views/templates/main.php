@@ -39,10 +39,11 @@
                     <i class="fa-regular fa-comment fa-flip-horizontal"></i>
                     Messagerie
                     <?php if(isset($_SESSION['userId'])){?>
-                    <span class="msgCount"><?php
+                    <span class="msgCount"><span><?php
                         $messageManager = new MessageManager();
                         $unreadMessagesCount = $messageManager->countUnreadMessages($_SESSION['userId']);
                         echo$unreadMessagesCount; }?>
+                            </span>
                     </span>
                 </a>
                 <a href="index.php?action=myAccount"> <i class="fa-regular fa-user"></i> Mon compte</a>

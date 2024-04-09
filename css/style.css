@@ -113,6 +113,11 @@ header .leftNav a {
     padding: 2px 2px 2px 2px;
 }
 
+.msgCount span {
+    position: relative;
+    left: 1px;
+}
+
 /**
  * Main
  */
@@ -827,6 +832,16 @@ body:has(.detailBookPage) {
 /**
  * SignUp Page (re-used for SignIn Page)
  */
+
+.signInError {
+    margin-top: 5px;
+    color: #CB2D2D;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: center;
+}
 
 .signUpPage {
     display: flex;
