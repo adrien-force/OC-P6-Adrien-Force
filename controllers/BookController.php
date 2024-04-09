@@ -152,8 +152,10 @@ class BookController
         }
 
         $bookManager->deleteBook($id);
-        unlink($book->getPicture());
-
+        if (strpos($book->getPicture(), 'ressources/uploads/') !== false)
+        {
+            unlink($book->getPicture());
+        }
         header('Location: ?action=myAccount');
         exit();
     }
