@@ -116,5 +116,15 @@ class Utils
         return $target_file;
     }
 
+    public static function shortenText(string $text, int $maxLength): string
+    {
+        if (strlen($text) > $maxLength) {
+            $text = substr($text, 0, $maxLength);
+            $text = substr($text, 0, strrpos($text, ' '));
+            $text .= '...';
+        }
+        return $text;
+    }
+
 
 }
