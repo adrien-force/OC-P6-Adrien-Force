@@ -3,6 +3,10 @@
 require_once 'config/_config.php';
 require_once 'config/autoload.php';
 
+if (!isset($_SESSION['darkTheme'])) {
+    $_SESSION['darkTheme'] = false;
+}
+
 // On récupère l'action demandée par l'utilisateur.
 // Si aucune action n'est demandée, on affiche la page d'accueil.
 $action = Utils::request('action', 'home');
@@ -94,6 +98,16 @@ try {
         case 'deleteBook':
             $bookController = new BookController();
             $bookController->deleteBook();
+            break;
+
+        case 'darkTheme':
+            $_SESSION['darkTheme'] = true;
+            header('Location: index.php?action=myAccount');
+            break;
+
+        case 'lightTheme':
+            $_SESSION['darkTheme'] = false;
+            header('Location: index.php?action=myAccount');
             break;
 
         default:

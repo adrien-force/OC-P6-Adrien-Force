@@ -1,0 +1,16 @@
+:root {
+    --secondColor: #262626;
+    --backgroundColor: #1a1a1a;
+    --backgroundSecondColor: #2a2a2a;
+    --tertiaryBackgroundColor: #1a1a1a;
+    --quaternaryBackgroundColor: #ffffff;
+    --brandColor: #00AC66;
+    --textColor: #d6d6d6;
+    --secondaryTextColor: #b6b6b6;
+    --tertiaryTextColor: #ffffff;
+    --borderOffColor: #404040;
+    --iconColor: #262626;
+    --errorColor: #CB2D2D;
+    --brandColorLight: #6DC5A1;
+    --lightRed: #C56D6D;
+}

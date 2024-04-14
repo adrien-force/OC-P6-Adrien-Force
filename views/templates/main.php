@@ -14,6 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> TEST TITTLE </title>
     <link rel="stylesheet" href="./css/style.css">
+    <?php if($_SESSION['darkTheme'] == true): ?>
+        <link rel="stylesheet" href="./css/darkTheme.css">
+    <?php endif; ?>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
@@ -52,6 +55,11 @@
                 <?php else: ?>
                     <a href="index.php?action=signIn"> Connexion</a>
                 <?php endif; ?>
+                <?php if ($_SESSION['darkTheme'] == true ): ?>
+                    <a href="index.php?action=lightTheme"> <i class="fa-regular fa-moon"></i></a>
+                <?php else: ?>
+                    <a href="index.php?action=darkTheme"> <i class="fa-regular fa-sun"></i></a>
+                <?php endif; ?>
             </div>
         </nav>
     </div>
@@ -69,6 +77,7 @@
         <div class="leftNav">
         </div>
         <div class="rightNav">
+
             <a href="index.php"> Politique de confidentialité</a>
             <a href="index.php"> Mentions légales</a>
             <a href="index.php"> Tom Troc © </a>
