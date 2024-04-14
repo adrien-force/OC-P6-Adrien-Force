@@ -55,11 +55,13 @@
                 <?php else: ?>
                     <a href="index.php?action=signIn"> Connexion</a>
                 <?php endif; ?>
-                <?php if ($_SESSION['darkTheme'] == true ): ?>
+                <?php if( isset($_GET['action']) && $_GET['action'] == 'myAccount') {?>
+                <?php if ($_SESSION['darkTheme'] === true): ?>
                     <a href="index.php?action=lightTheme"> <i class="fa-regular fa-moon"></i></a>
                 <?php else: ?>
                     <a href="index.php?action=darkTheme"> <i class="fa-regular fa-sun"></i></a>
                 <?php endif; ?>
+                <?php } ?>
             </div>
         </nav>
     </div>
