@@ -69,4 +69,5 @@ class Book extends AbstractEntity
         $this->picture = $picture;
     }
 
+
 }
