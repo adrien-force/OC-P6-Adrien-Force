@@ -17,7 +17,6 @@
     <?php if($_SESSION['darkTheme'] == true): ?>
         <link rel="stylesheet" href="./css/darkTheme.css">
     <?php endif; ?>
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
