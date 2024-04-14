@@ -54,6 +54,7 @@
                 <?php else: ?>
                     <a href="index.php?action=signIn"> Connexion</a>
                 <?php endif; ?>
+<!--                    TODO :  Revoir mise en page du switch-->
                 <?php if( isset($_GET['action']) && $_GET['action'] == 'myAccount') {?>
                 <?php if ($_SESSION['darkTheme'] === true): ?>
                     <a href="index.php?action=lightTheme"> <i class="fa-regular fa-moon"></i></a>
