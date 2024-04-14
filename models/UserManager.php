@@ -68,7 +68,7 @@ class UserManager extends AbstractEntityManager
             'password' => $user->getPassword(),
             'role' => $user->getRole(),
             'picture' => $user->getPicture(),
-            'signUpDate' => $user->getSignUpDate(),
+            'signUpDate' => $user->getSignUpDate()->format('Y-m-d H:i:s'),
         ]);
     }
 

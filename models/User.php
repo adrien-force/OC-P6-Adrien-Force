@@ -60,13 +60,13 @@ class User extends AbstractEntity
         $this->email = $email;
     }
 
-    public function getSignUpDate(): datetime
+    public function getSignUpDate(): DateTime
     {
 
         return $this->signUpDate;
     }
 
-    public function setSignUpDate(string | datetime $signUpDate): void
+    public function setSignUpDate(string | DateTime $signUpDate): void
     {
         if(is_string($signUpDate)){
             $this->signUpDate = new DateTime($signUpDate);

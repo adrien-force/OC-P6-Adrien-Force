@@ -90,7 +90,7 @@ class UserController
                 'password' => $hashedPassword,
                 'role' => 'user',
                 'picture' => 'ressources/assets/default.png',
-                'signUpDate' => new DateTime('now')
+                'signUpDate' => new DateTime()
             ]);
 
             $userManager->addUser($user);
