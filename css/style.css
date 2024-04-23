@@ -28,10 +28,50 @@ a {
  */
 
 :root {
-    --backgroundColor: #f5f3ef;
+    --secondColor: #f5f3ef;
+    --backgroundColor: #FFFFFF;
     --backgroundSecondColor: #faf9f7;
-    --brandColor: #00AC66;;
+    --tertiaryBackgroundColor: #EDF2F6;
+    --quaternaryBackgroundColor: #000000;
+    --brandColor: #00AC66;
+    --textColor: #292929;
+    --secondaryTextColor: #A6A6A6;
+    --tertiaryTextColor: #000000;
+    --borderOffColor: #F0F0F0;
+    --iconColor: #D9D9D9;
+    --errorColor: #CB2D2D;
+    --brandColorLight: #6DC5A1;
+    --lightRed: #C56D6D;
 
+}
+
+/**
+ * Déclaration des polices.
+ */
+
+:root {
+    --mainFont: 'Playfair Display', serif;
+    --secondaryFont: 'Inter', sans-serif;
+}
+
+/**
+ * Global
+ */
+
+h2 {
+    color: var(--tertiaryTextColor);
+}
+
+h3 {
+    color: var(--tertiaryTextColor);
+}
+
+h4 {
+    color: var(--tertiaryTextColor);
+}
+
+td {
+    color: var(--textColor);
 }
 
 /**
@@ -43,7 +83,7 @@ a {
 
 
 html {
-    background-color: var(--backgroundColor);
+    background-color: var(--secondColor);
 }
 
 header {
@@ -51,7 +91,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #f5f3ef;
+    background-color: var(--secondColor);
 }
 
 .headerOverflow {
@@ -69,9 +109,9 @@ header {
 
 
 nav a {
-    color: #292929;
+    color: var(--textColor);
     text-decoration: none;
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
@@ -103,8 +143,8 @@ header .leftNav a {
 
 .msgCount {
     font-size: 8px;
-    color: white;
-    background-color: black;
+    color: var(--backgroundColor);
+    background-color: var(--quaternaryBackgroundColor);
     vertical-align: middle;
     border-radius: 13px;
     height: 10px;
@@ -127,8 +167,6 @@ body {
     flex-direction: column;
     align-items: center;
     margin: auto;
-    border-left: 1px solid BLACK;
-    border-right: 1px solid BLACK;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -156,7 +194,7 @@ footer {
     width: 100%;
     height: 80px;
     padding: 20px 0;
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
     margin-top: auto;
     position: relative;
     left: 0;
@@ -177,7 +215,7 @@ footer .rightNav {
 
 footer .rightNav a {
     margin-left: 40px;
-    font-family: Inter, sans-serifé;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 1;
     line-height: 14.52px;
@@ -213,7 +251,7 @@ footer .logoTT {
 }
 
 .leftPanel > h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 36px;
     font-weight: 400;
     line-height: 47.99px;
@@ -222,7 +260,7 @@ footer .logoTT {
 }
 
 .leftPanel > h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 300;
     line-height: 19.36px;
@@ -246,13 +284,13 @@ footer .logoTT {
 }
 
 .rightPanel > h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
     line-height: 14.52px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-top: 10px;
     margin-bottom: 100px;
 
@@ -265,12 +303,12 @@ footer .logoTT {
     align-items: center;
     text-decoration: 0;
     background-color: var(--brandColor);
-    color: white;
+    color: var(--backgroundColor);
     text-align: center;
     padding: 10px 20px;
     border-radius: 10px;
     margin-top: 40px;
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 600;
     line-height: 19.36px;
@@ -307,7 +345,7 @@ footer .logoTT {
 .section2 h2 {
     margin-top: 70px;
     margin-bottom: 135px;
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 32px;
     font-weight: 400;
     line-height: 42.66px;
@@ -340,7 +378,7 @@ footer .logoTT {
     overflow: hidden;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
 }
 
 .bookGrid a {
@@ -359,7 +397,7 @@ footer .logoTT {
 }
 
 .bookCard h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 400;
     line-height: 19.36px;
@@ -374,30 +412,30 @@ footer .logoTT {
 }
 
 .bookCard h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-left: 12px;
 }
 
 .bookCard h5 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 10px;
     font-style: italic;
     font-weight: 400;
     line-height: 12.1px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-left: 12px;
     margin-bottom: 10px;
 }
 
 .section3 {
     display: flex;
-    background-color: var(--backgroundColor);
+    background-color: var(--secondColor);
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -412,13 +450,13 @@ footer .logoTT {
 }
 
 .clearButton {
-    background-color: var(--backgroundColor);
-    border: #00AC66 1px SOLID;
-    color: #00AC66;
+    background-color: var(--secondColor);
+    border: var(--brandColor) 1px SOLID;
+    color: var(--brandColor);
 }
 
 .section3 h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 32px;
     font-weight: 400;
     line-height: 42.66px;
@@ -427,7 +465,7 @@ footer .logoTT {
 }
 
 .section3 h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 300;
     line-height: 19.36px;
@@ -450,16 +488,17 @@ footer .logoTT {
     display: flex;
     justify-content: center;
     align-items: center; /* TODO:  pas besoin d'une flex box */
-    font-family: Inter; /* TODO Wrap sur le text*/
+    font-family: var(--secondaryFont); /* TODO Wrap sur le text*/
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: center;
     width: 215px;
     height: 139px;
-    background-color: white;
+    background-color: var(--backgroundColor);
     border-radius: 10px;
-    padding: 0px 20px 0px 20px;
+    padding: 0 20px 0 20px;
+    color: var(--tertiaryTextColor);
 
 }
 
@@ -500,7 +539,7 @@ footer .logoTT {
 }
 
 .section5 h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 32px;
     font-weight: 400;
     line-height: 42.66px;
@@ -508,7 +547,7 @@ footer .logoTT {
 }
 
 .section5 h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 300;
     line-height: 19.36px;
@@ -519,13 +558,13 @@ footer .logoTT {
 }
 
 .section5 h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
     line-height: 14.52px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
 }
 
 .section5 img {
@@ -553,7 +592,7 @@ footer .logoTT {
 }
 
 .bookPage .bgOverflow {
-    background: #FAF9F7;
+    background: var(--backgroundSecondColor);
 }
 
 .bookPageContent {
@@ -579,7 +618,7 @@ footer .logoTT {
 }
 
 .ourBookTop h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 36px;
     font-weight: 400;
     line-height: 47.99px;
@@ -613,13 +652,13 @@ footer .logoTT {
 .searchBar form {
     width: 300px;
     height: 50px;
-    border: 1px solid #F0F0F0;
+    border: 1px solid var(--borderOffColor);
     border-radius: 6px;
     display: flex;
     justify-content: start;
     align-items: center;
     padding-left: 10px;
-    background-color: white;
+    background-color: var(--backgroundColor);
 }
 
 .searchBar input {
@@ -629,7 +668,7 @@ footer .logoTT {
 }
 
 .searchBar .fa-solid {
-    color: #D9D9D9;
+    color: var(--iconColor);
 
 }
 
@@ -638,22 +677,22 @@ input {
     height: 100%;
     border: none;
     padding-left: 10px;
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     border-radius: 6px;
 }
 
 input::placeholder {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
 }
 
 input:focus {
@@ -667,11 +706,11 @@ input:focus {
 
 
 .detailBookPage .bgOverflow {
-    background: #FAF9F7;
+    background: var(--backgroundSecondColor);
 }
 
 body:has(.detailBookPage) {
-    background-color: #faf9f7;
+    background-color: var(--backgroundSecondColor);
 }
 
 .detailBookPage {
@@ -696,7 +735,7 @@ body:has(.detailBookPage) {
 }
 
 .detailBook h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 36px;
     font-weight: 400;
     line-height: 47.99px;
@@ -705,34 +744,34 @@ body:has(.detailBookPage) {
 }
 
 .detailBook h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 400;
     line-height: 19.36px;
     text-align: left;
     margin-top: 20px;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
 }
 
 .detailBook h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 8px;
     font-weight: 600;
     line-height: 9.68px;
     letter-spacing: 0.08em;
     text-align: left;
     margin-top: 20px;
-    color: #292929;
+    color: var(--textColor);
 }
 
 .detailBook p {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
     margin-top: 20px;
-    color: #292929;
+    color: var(--textColor);
 }
 
 
@@ -744,7 +783,7 @@ body:has(.detailBookPage) {
 .separationLine {
     height: 1px;
     width: 27px;
-    background-color: #A6A6A6;
+    background-color: var(--secondaryTextColor);
     margin-top: 20px;
 }
 
@@ -764,12 +803,12 @@ body:has(.detailBookPage) {
     width: 100%;
     margin-bottom: 17px;
     max-width: 1140px;
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 10px;
     font-weight: 300;
     line-height: 12.1px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-top: 40px;
 }
 
@@ -795,7 +834,7 @@ body:has(.detailBookPage) {
     max-width: 300px;
     height: 60px;
     margin-top: 50px;
-    background-color: white;
+    background-color: var(--backgroundColor);
     border-radius: 114px;
 }
 
@@ -813,12 +852,12 @@ body:has(.detailBookPage) {
 }
 
 .ownerBubble h5 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 400;
     line-height: 19.36px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -835,8 +874,8 @@ body:has(.detailBookPage) {
 
 .signInError {
     margin-top: 5px;
-    color: #CB2D2D;
-    font-family: Inter;
+    color: var(--errorColor);
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
@@ -878,37 +917,37 @@ body:has(.detailBookPage) {
 }
 
 .signUpPage h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 36px;
     font-weight: 400;
     line-height: 47.99px;
     text-align: left;
-    color: #000000;
+    color: var(--tertiaryTextColor);
     margin-bottom: 32px;
 
 }
 
 .signUpPage h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #292929;
+    color: var(--textColor);
 }
 
 .signUpFormBox h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-top: 32px;
 }
 
 .signUpFormBox input {
-    border: 1px solid #F0F0F0;
+    border: 1px solid var(--borderOffColor);
     border-radius: 6px;
     width: 322px;
     height: 50px;
@@ -924,7 +963,7 @@ body:has(.detailBookPage) {
 
 .signUpPageContent > h3 > a {
     text-decoration: underline;
-    text-underline: #292929;
+    text-underline: var(--textColor);
 }
 
 /**
@@ -941,7 +980,7 @@ body:has(.detailBookPage) {
 }
 
 .myAccountPage .bgOverflow {
-    background: #FAF9F7;
+    background: var(--backgroundSecondColor);
 }
 
 .myAccountTitle {
@@ -953,12 +992,12 @@ body:has(.detailBookPage) {
 }
 
 .myAccountTitle h1 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 26px;
     font-weight: 400;
     line-height: 34.66px;
     text-align: left;
-    color: #000000;
+    color: var(--tertiaryTextColor);
 }
 
 .myAccountCards {
@@ -979,7 +1018,7 @@ body:has(.detailBookPage) {
     justify-content: center;
     width: 547px;
     height: 508px;
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
     border-radius: 20px;
 }
 
@@ -990,7 +1029,7 @@ body:has(.detailBookPage) {
 .userCard .clearButton {
     margin-top: 20px;
     color: var(--brandColor);
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 500;
     line-height: 19.36px;
@@ -1003,55 +1042,55 @@ body:has(.detailBookPage) {
 }
 
 .userCard a {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: center;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-top: 5px;
 }
 
 .userCard .separationLine {
     height: 1px;
     width: 242px;
-    background-color: #F5F3EF;
+    background-color: var(--secondColor);
     margin-top: 45px;
     margin-bottom: 50px;
 }
 
 .userCard h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 24px;
     font-weight: 400;
     line-height: 31.99px;
     text-align: center;
-    color: #292929;
+    color: var(--textColor);
 }
 
 .userCard h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: center;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-top: 12px;
 }
 
 .userCard h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 8px;
     font-weight: 600;
     line-height: 9.68px;
     letter-spacing: 0.08em;
     text-align: center;
-    color: #292929;
+    color: var(--textColor);
     margin-top: 25px;
 }
 
 .userCard .darkText {
-    color: #292929;
+    color: var(--textColor);
 }
 
 .modifyCard {
@@ -1063,12 +1102,12 @@ body:has(.detailBookPage) {
 }
 
 .modifyCard h2 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 400;
     line-height: 19.36px;
     text-align: left;
-    color: #292929;
+    color: var(--textColor);
 }
 
 .myAccountCard form {
@@ -1076,23 +1115,23 @@ body:has(.detailBookPage) {
 }
 
 .modifyCard h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-top: 32px;
 }
 
 .modifyCard .modifyInput {
-    border: 1px solid #F0F0F0;
+    border: 1px solid var(--borderOffColor);
     border-radius: 6px;
     width: 100%;
     height: 50px;
     margin-top: 12px;
-    background-color: #EDF2F6;
-    color: #292929;
+    background-color: var(--tertiaryBackgroundColor);
+    color: var(--textColor);
 }
 
 .myAccountCard .clearButton {
@@ -1104,18 +1143,18 @@ body:has(.detailBookPage) {
     width: 100%;
     border-collapse: collapse;
     margin-top: 50px;
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
     border-radius: 20px;
     margin-bottom: 100px;
 }
 
 .myAccountPageContent th {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 8px;
     font-weight: 600;
     line-height: 9.68px;
     letter-spacing: 0.08em;
-    color: #292929;
+    color: var(--textColor);
     text-align: center;
     height: 50px;
 }
@@ -1137,27 +1176,27 @@ body:has(.detailBookPage) {
 }
 
 .myAccountPageContent tbody tr:not(:first-child):nth-child(odd) {
-    background-color: #EDF2F6;
+    background-color: var(--tertiaryBackgroundColor);
 }
 
 .myAccountPageContent tbody tr:not(:first-child):nth-child(even) {
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
 }
 
 .myAccountPageContent .tableAlternateColor {
-    background-color: #EDF2F6;
+    background-color: var(--tertiaryBackgroundColor);
 }
 
 .myAccountPageContent td {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
     height: 130px;
     max-height: 130px;
     text-align: center;
-    border-bottom: 1px SOLID #F5F3EF;
-    border-top: 1px SOLID #F5F3EF;
+    border-bottom: 1px SOLID var(--secondColor);
+    border-top: 1px SOLID var(--secondColor);
     justify-content: center;
     align-items: center;
     padding: 0 10px 0 10px;
@@ -1173,34 +1212,25 @@ body:has(.detailBookPage) {
 }
 
 .myAccountPageContent table .availability {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 8.88px;
     font-weight: 500;
     line-height: 10.74px;
     text-align: left;
     border-radius: 30px;
     padding: 7px 20px 7px 20px;
-    color: #FFFFFF;
-}
-
-.available {
-    background-color: #6DC5A1;
-}
-
-.unavailable {
-    background-color: #C56D6D;
-    text-wrap: none;
+    color: var(--backgroundColor);
 }
 
 .myAccountPageContent .editButton {
     text-decoration: underline;
-    color: #292929;
+    color: var(--textColor);
     margin-right: 20px;
 }
 
 .myAccountPageContent .deleteButton {
     text-decoration: underline;
-    color: #CB2D2D;
+    color: var(--errorColor);
 }
 
 .italic {
@@ -1222,7 +1252,7 @@ body:has(.detailBookPage) {
 }
 
 body:has(.accountPage) {
-    background-color: #faf9f7;
+    background-color: var(--backgroundSecondColor);
 }
 
 .accountPage .bgOverflow {
@@ -1244,18 +1274,18 @@ body:has(.accountPage) {
     width: 100%;
     border-collapse: collapse;
     margin-top: 50px;
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
     border-radius: 20px;
     margin-bottom: 100px;
 }
 
 .accountPageContent th {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 8px;
     font-weight: 600;
     line-height: 9.68px;
     letter-spacing: 0.08em;
-    color: #292929;
+    color: var(--textColor);
     text-align: center;
     height: 50px;
 }
@@ -1277,27 +1307,22 @@ body:has(.accountPage) {
 }
 
 .accountPageContent tbody tr:not(:first-child):nth-child(odd) {
-    background-color: #EDF2F6;
+    background-color: var(--tertiaryBackgroundColor);
 }
 
 .accountPageContent tbody tr:not(:first-child):nth-child(even) {
-    background-color: #FFFFFF;
-}
-
-.accountPageContent .tableAlternateColor {
-    background-color: #EDF2F6;
+    background-color: var(--backgroundColor);
 }
 
 .accountPageContent td {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
-    text-align: left;
     height: 130px;
     text-align: center;
-    border-bottom: 1px SOLID #F5F3EF;
-    border-top: 1px SOLID #F5F3EF;
+    border-bottom: 1px SOLID var(--secondColor);
+    border-top: 1px SOLID var(--secondColor);
     justify-content: center;
     align-items: center;
 
@@ -1309,23 +1334,23 @@ body:has(.accountPage) {
 }
 
 .accountPageContent table .availability {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 8.88px;
     font-weight: 500;
     line-height: 10.74px;
     text-align: left;
     border-radius: 30px;
     padding: 7px 20px 7px 20px;
-    color: #FFFFFF;
+    color: var(--backgroundColor);
 
 }
 
 .available {
-    background-color: #6DC5A1;
+    background-color: var(--brandColorLight);
 }
 
 .unavailable {
-    background-color: #C56D6D;
+    background-color: var(--lightRed);
     white-space: nowrap;
 }
 
@@ -1336,19 +1361,19 @@ body:has(.accountPage) {
 }
 
 .accountPageContent .myAccountBooks {
-    margin : 0px;
+    margin : 0;
     min-width: 784px;
 }
 
 .accountPageContent .mainButton {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 16px;
     font-weight: 600;
     line-height: 19.36px;
     text-align: center;
     width: 215px;
     height: 63px;
-    color: #00AC66;
+    color: var(--brandColor);
     margin-top: 40px;
 }
 
@@ -1395,7 +1420,7 @@ Modify Book Page
 */
 
 .modifyBookPage .breadcrumb {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .modifyBookPage {
@@ -1412,7 +1437,7 @@ Modify Book Page
 
 
 .modifyBookPage h1 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 26px;
     font-weight: 400;
     line-height: 34.66px;
@@ -1421,22 +1446,22 @@ Modify Book Page
 }
 
 .modifyBookContent > .photoSide > h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
     margin-bottom: 10px;
 }
 
 .modifyPicLink {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
     text-align: right;
-    color: #292929;
+    color: var(--textColor);
     margin-top: 23px;
     text-decoration: underline;
     width: 488px;
@@ -1444,7 +1469,7 @@ Modify Book Page
 }
 
 .modifyBook > .myAccountFormBox > h4 {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .modifyBook > .myAccountFormBox > input {
@@ -1472,7 +1497,7 @@ Modify Book Page
 }
 
 .modifyBookPage > .bgOverflow > .breadcrumb > h5 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
@@ -1480,7 +1505,7 @@ Modify Book Page
 }
 
 .modifyBookPage .modifyBookContent {
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -1504,7 +1529,7 @@ Modify Book Page
 .modifyBookPage img {
     width: 488px;
     height: 488px;
-    margin: 0px;
+    margin: 0;
     min-height: 488px;
     object-fit: cover;
 }
@@ -1516,15 +1541,15 @@ Modify Book Page
 .form {
     width: 435px;
     resize: none;
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #292929;
+    color: var(--textColor);
     padding: 10px;
-    background-color: #EDF2F6;
-    border: 1px solid #F0F0F0;
+    background-color: var(--tertiaryBackgroundColor);
+    border: 1px solid var(--borderOffColor);
     border-radius: 6px;
     margin-top: 12px;
 }
@@ -1534,7 +1559,7 @@ Modify Book Page
 }
 
 .selectorPadding {
-    border-right: 10px solid #EDF2F6;
+    border-right: 10px solid var(--tertiaryBackgroundColor);
 }
 
 .modifyBookPage .mainButton {
@@ -1554,7 +1579,7 @@ Inbox Page
 }
 
 .inboxPage .bgOverflow {
-    background-color: #f5f3ef;
+    background-color: var(--secondColor);
 }
 
 .inboxPageContent {
@@ -1570,7 +1595,7 @@ Inbox Page
 .conversationSide {
     width: 27%;
     min-width: 250px;
-    background-color: #FAF9F7;
+    background-color: var(--backgroundSecondColor);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1587,16 +1612,16 @@ Inbox Page
     flex-direction: column;
     align-items: start;
     justify-content: end;
-    background-color: #faf9f7;
+    background-color: var(--backgroundSecondColor);
 }
 
 .conversationSideTitle h2 {
-    font-family: Playfair Display;
+    font-family: var(--mainFont);
     font-size: 26px;
     font-weight: 400;
     line-height: 34.66px;
     text-align: left;
-    color: #000000;
+    color: var(--tertiaryTextColor);
     margin: 25px;
 }
 .conversations {
@@ -1641,12 +1666,12 @@ Inbox Page
 }
 
 .conversationInfoBot h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
 }
 
 .conversation {
@@ -1656,12 +1681,11 @@ Inbox Page
     justify-content: start;
     width: 100%;
     height: 84px;
-    /*background-color: #ffffff;*/
     padding: 17px
 }
 
 .conversation.selected {
-    background-color: #ffffff;
+    background-color: var(--backgroundColor);
 }
 
 
@@ -1682,7 +1706,7 @@ Inbox Page
 }
 
 .conversationPseudo {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
@@ -1690,7 +1714,7 @@ Inbox Page
 }
 
 .conversationTime{
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
@@ -1719,12 +1743,12 @@ Inbox Page
 }
 
 .messageSide h2 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 600;
     line-height: 16.94px;
     text-align: left;
-    color: #000000;
+    color: var(--tertiaryTextColor);
 }
 
 .messageTop {
@@ -1760,16 +1784,16 @@ Inbox Page
 .messageBot input {
     width: 80%;
     height: 49px;
-    border: 1px SOLID #F0F0F0;
+    border: 1px SOLID var(--borderOffColor);
     border-radius: 6px;
     padding-left: 10px;
-    background-color: #FFFFFF;
-    font-family: Inter;
+    background-color: var(--backgroundColor);
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
 }
 
 .messageBot button {
@@ -1794,21 +1818,21 @@ Inbox Page
 }
 
 .messages h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
     text-align: left;
-    color: #292929;
+    color: var(--textColor);
 }
 
 .messages h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
 }
 
 .messageSentContent {
@@ -1821,7 +1845,7 @@ Inbox Page
     height: fit-content;
     min-height: 47px;
     max-width: 90%;
-    background-color: #EDF2F6;
+    background-color: var(--tertiaryBackgroundColor);
     padding: 10px;
     border-radius: 3px;
 }
@@ -1862,27 +1886,27 @@ Inbox Page
     height: fit-content;
     min-height: 47px;
     max-width: 90%;
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
     padding: 10px;
     border-radius: 3px;
 }
 
 .messageReceivedContent h3 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
     text-align: left;
-    color: #A6A6A6;
+    color: var(--secondaryTextColor);
 }
 
 .messageReceivedContent h4 {
-    font-family: Inter;
+    font-family: var(--secondaryFont);
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
     text-align: left;
-    color: #292929;
+    color: var(--textColor);
 }
 
 /*
@@ -1898,11 +1922,11 @@ label {
     align-items: center;
     justify-content: center;
     padding: 10px 12px;
-    background-color: #EDF2F6;
-    border: 1px solid #F0F0F0;
+    background-color: var(--tertiaryBackgroundColor);
+    border: 1px solid var(--borderOffColor);
     border-radius: 6px;
-    color: #292929;
-    font-family: Inter;
+    color: var(--textColor);
+    font-family: var(--secondaryFont);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
@@ -1919,10 +1943,6 @@ label {
 .addBookPage .mainButton {
     width: 100%;
     margin-left: 0;
-}
-
-.uploadLabel:hover {
-    background-color: #D9D9D9;
 }
 
 .uploadLabel span {
