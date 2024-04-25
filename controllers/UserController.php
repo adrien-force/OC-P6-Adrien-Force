@@ -5,6 +5,15 @@ require_once 'models/User.php';
 
 class UserController
 {
+    private UserManager $userManager;
+
+    private BookManager $bookManager;
+
+    public function __construct(){
+        $this->userManager = new UserManager();
+        $this->bookManager = new BookManager();
+    }
+
     public function showLogin(): void
     {
         $view = new View("Login");
@@ -30,11 +39,9 @@ class UserController
             exit;
         }
 
-        $bookManager = new BookManager();
-        $userManager = new UserManager();
 
-        $user = $userManager->getUserById($_SESSION['userId']);
-        $books = $bookManager->getBooksByOwnerId($_SESSION['userId']);
+        $user = $this->userManager->getUserById($_SESSION['userId']);
+        $books = $this->bookManager->getBooksByOwnerId($_SESSION['userId']);
 
         // Render the view and pass the data
         $view = new View("myAccount");
@@ -43,10 +50,8 @@ class UserController
 
     public function showAccount(): void
     {
-        $userManager = new UserManager();
-        $bookManager = new BookManager();
-        $user = $userManager->getUserById($_GET['id']);
-        $books = $bookManager->getAvailableBooksByOwnerId($_GET['id']);
+        $user = $this->userManager->getUserById($_GET['id']);
+        $books = $this->bookManager->getAvailableBooksByOwnerId($_GET['id']);
 
 
         $view = new View("Account");
@@ -75,9 +80,8 @@ class UserController
                 return;
             }
 
-            $userManager = new UserManager();
 
-            if ($userManager->getUserByUsername($username)) {
+            if ($this->userManager->getUserByUsername($username)) {
                 echo "A user with this username already exists.";
                 return;
             }
@@ -93,7 +97,7 @@ class UserController
                 'signUpDate' => new DateTime()
             ]);
 
-            $userManager->addUser($user);
+            $this->userManager->addUser($user);
 
             header("Location: index.php?action=signIn");
             exit;
@@ -122,9 +126,8 @@ class UserController
                 exit;
             }
 
-            $userManager = new UserManager();
 
-            $user = $userManager->getUserByEmail($email);
+            $user = $this->userManager->getUserByEmail($email);
             if (!$user) {
                 $_SESSION['error'] = "Aucun utilisateur n'est associé à cet email.";
                 header("Location: index.php?action=signIn");
@@ -171,8 +174,7 @@ class UserController
 
     public function modifyInfo()
     {
-        $userManager = new UserManager();
-        $user = $userManager->getUserById($_SESSION['userId']);
+        $user = $this->userManager->getUserById($_SESSION['userId']);
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $username = $_POST['username'];
@@ -200,7 +202,7 @@ class UserController
             $user->setEmail($email);
             $user->setPassword($hashedPassword);
 
-            $userManager->updateUser($user);
+            $this->userManager->updateUser($user);
 
             header("Location: index.php?action=myAccount");
             exit;

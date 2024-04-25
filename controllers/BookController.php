@@ -3,10 +3,15 @@
 
 class BookController
 {
+    private BookManager $bookManager;
+    public function __construct()
+    {
+        $this->bookManager = new BookManager();
+    }
+
     public function showHome(): void
     {
-        $bookManager = new BookManager();
-        $books = $bookManager->getFourLastBooks();
+        $books = $this->bookManager->getFourLastBooks();
 
         $view = new View("HomePage");
         $view->render('home', ['books' => $books]);
@@ -14,12 +19,11 @@ class BookController
 
     public function showOurBooks(): void
     {
-        $bookManager = new BookManager();
         if (isset($_GET['search'])) {
             $searchQuery = $_GET['search'];
-            $books = $bookManager->searchBooks($searchQuery);
+            $books = $this->bookManager->searchBooks($searchQuery);
         } else {
-            $books = $bookManager->getAllBooks();
+            $books = $this->bookManager->getAllBooks();
         }
 
         $view = new View("Our Books");
@@ -33,8 +37,7 @@ class BookController
             $id = intval($id);
         }
 
-        $bookManager = new BookManager();
-        $book = $bookManager->getBookById($id);
+        $book = $this->bookManager->getBookById($id);
 
         if (!$book) {
             throw new Exception("The book does not exist.");
@@ -51,8 +54,7 @@ class BookController
         } catch (Exception $e) {
             throw new Exception("The book does not exist.");
         }
-        $bookManager = new BookManager();
-        $book = $bookManager->getBookById($id);
+        $book = $this->bookManager->getBookById($id);
 
         if (!$book) {
             throw new Exception("The book does not exist.");
@@ -76,10 +78,9 @@ class BookController
         $description = htmlspecialchars($description, ENT_QUOTES, 'UTF-8');
         $availability = htmlspecialchars($availability, ENT_QUOTES, 'UTF-8');
 
-        $bookManager = new BookManager();
 
         try {
-            $bookManager->updateBook($id, $title, $author, $description, $availability);
+            $this->bookManager->updateBook($id, $title, $author, $description, $availability);
         } catch (Exception $e) {
             die('Error: ' . $e->getMessage());
         }
@@ -108,10 +109,9 @@ class BookController
             die('Error: ' . $e->getMessage());
         }
 
-        $bookManager = new BookManager();
 
         try {
-            $bookManager->addBook($title, $author, $description, $ownerId, $availability, $coverPath);
+            $this->bookManager->addBook($title, $author, $description, $ownerId, $availability, $coverPath);
         } catch (Exception $e) {
             die('Error: ' . $e->getMessage());
         }
@@ -128,8 +128,7 @@ class BookController
 
     public function deleteBook()
     {
-        $bookManager = new BookManager();
-        $book = $bookManager->getBookById($_GET['id']);
+        $book = $this->bookManager->getBookById($_GET['id']);
 
         if ($book->getOwnerId() != $_SESSION['userId']) {
             throw new Exception("You are not the owner of this book.");
@@ -144,14 +143,13 @@ class BookController
             $id = intval($id);
         }
 
-        $bookManager = new BookManager();
-        $book = $bookManager->getBookById($id);
+        $book = $this->bookManager->getBookById($id);
 
         if (!$book) {
             throw new Exception("The book does not exist.");
         }
 
-        $bookManager->deleteBook($id);
+        $this->bookManager->deleteBook($id);
         if (strpos($book->getPicture(), 'ressources/uploads/') !== false)
         {
             unlink($book->getPicture());

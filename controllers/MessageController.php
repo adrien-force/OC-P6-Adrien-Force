@@ -2,20 +2,22 @@
 
 class MessageController
 {
-    private $conversationController;
+    private ConversationController $conversationController;
+
+    private MessageManager $messageManager;
 
     public function __construct()
     {
         $this->conversationController = new ConversationController();
+        $this->messageManager = new MessageManager();
     }
 
     public function showInbox(): void {
-        $messageManager = new MessageManager();
-        $conversations = $messageManager->getConversations($_SESSION['userId']);
+        $conversations = $this->messageManager->getConversations($_SESSION['userId']);
         $selectedConversation = $this->conversationController->getSelectedConversation($_SESSION['userId'], $_GET['receiver_id'] ?? null);
 
         if ($selectedConversation) {
-            $messageManager->markAsRead($_SESSION['userId'], $selectedConversation['conversationPartnerId']);
+            $this->messageManager->markAsRead($_SESSION['userId'], $selectedConversation['conversationPartnerId']);
         }
 
         $view = new View("inbox");
@@ -32,8 +34,7 @@ class MessageController
                 'sent_datetime' => new DateTime()
             ]);
 
-            $messageManager = new MessageManager();
-            $messageManager->addMessage($message);
+            $this->messageManager->addMessage($message);
 
             header('Location: ?action=showInbox&receiver_id=' . $_POST['receiver_id']);
         }
