@@ -75,7 +75,8 @@ class User extends AbstractEntity
         }
     }
 
-    public function getHowManyBookByUser($userId) {
+    public function getHowManyBookByUser(int $userId): int
+    {
         $bookManager = new BookManager();
         return $bookManager->getHowManyBooksById($userId);
     }

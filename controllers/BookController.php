@@ -89,7 +89,7 @@ class BookController
         exit();
     }
 
-    public function addBook()
+    public function addBook(): void
     {
         $book = $this->bookManager->createFromPost($_POST);
 
@@ -103,13 +103,13 @@ class BookController
         exit();
     }
 
-    public function showAddBook()
+    public function showAddBook(): void
     {
         $view = new View("Ajouter un livre");
         $view->render('addBook');
     }
 
-    public function deleteBook()
+    public function deleteBook(): void
     {
         $book = $this->bookManager->getBookById($_GET['id']);
 

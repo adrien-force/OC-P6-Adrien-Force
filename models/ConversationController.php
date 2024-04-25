@@ -9,7 +9,7 @@ class ConversationController
         $this->messageManager = new MessageManager();
     }
 
-    public function getSelectedConversation($userId, $receiverId = null)
+    public function getSelectedConversation(int $userId, int $receiverId = null): array
     {
         $conversations = $this->messageManager->getConversations($userId);
         $firstConversation = reset($conversations);

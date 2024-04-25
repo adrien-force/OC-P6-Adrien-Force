@@ -14,12 +14,6 @@ class UserController
         $this->bookManager = new BookManager();
     }
 
-    public function showLogin(): void
-    {
-        $view = new View("Login");
-        $view->render('login');
-    }
-
     public function showSignUp(): void
     {
         $view = new View("signUp");
@@ -172,7 +166,7 @@ class UserController
         exit;
     }
 
-    public function modifyInfo()
+    public function modifyInfo(): void
     {
         $user = $this->userManager->getUserById($_SESSION['userId']);
 

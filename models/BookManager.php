@@ -106,7 +106,8 @@ class BookManager extends AbstractEntityManager
         return null;
     }
 
-    public function searchBooks($searchQuery) {
+    public function searchBooks(string $searchQuery) : array
+    {
         $sql = <<<SQL
         SELECT * FROM book WHERE title LIKE :search OR author LIKE :search
         SQL;
@@ -120,7 +121,8 @@ class BookManager extends AbstractEntityManager
         return $books;
     }
 
-    public function getBooksByOwnerId($ownerId) {
+    public function getBooksByOwnerId(int $ownerId): array
+    {
         $sql = <<<SQL
         SELECT * FROM book WHERE owner_id = :ownerId
         SQL;
@@ -134,7 +136,8 @@ class BookManager extends AbstractEntityManager
         return $books;
     }
 
-    public function getAvailableBooksByOwnerId($ownerId) {
+    public function getAvailableBooksByOwnerId(int $ownerId): array
+    {
         $sql = <<<SQL
         SELECT * FROM book WHERE owner_id = :ownerId AND availability = 'disponible'
         SQL;
@@ -148,7 +151,8 @@ class BookManager extends AbstractEntityManager
         return $books;
     }
 
-    public function getHowManyBooksById($ownerId) {
+    public function getHowManyBooksById(int $ownerId): int
+    {
         $sql = <<<SQL
         SELECT COUNT(*) as bookCount FROM book WHERE owner_id = :ownerId
         SQL;
@@ -173,7 +177,7 @@ class BookManager extends AbstractEntityManager
         ]);
     }
 
-    public function deleteBook(int $id)
+    public function deleteBook(int $id): void
     {
         $sql = <<<SQL
         DELETE FROM book WHERE id = :id

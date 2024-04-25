@@ -18,7 +18,7 @@ class UserManager extends AbstractEntityManager
         return null;
     }
 
-    public function getUserById(int $id)
+    public function getUserById(int $id): ?User
     {
         $sql = <<<SQL
         SELECT * 
@@ -88,7 +88,7 @@ class UserManager extends AbstractEntityManager
         return null;
     }
 
-    public function updateUser(?User $user)
+    public function updateUser(?User $user): void
     {
         $sql = <<<SQL
         UPDATE user
