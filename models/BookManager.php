@@ -2,6 +2,19 @@
 
 class BookManager extends AbstractEntityManager
 {
+    public function createFromPost(array $post): Book
+    {
+        $book = new Book();
+
+        $book->setTitle(htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8'));
+        $book->setAuthor(htmlspecialchars($post['author'], ENT_QUOTES, 'UTF-8'));
+        $book->setDescription(htmlspecialchars($post['description'], ENT_QUOTES, 'UTF-8'));
+        $book->setOwnerId($_SESSION['userId']);
+        $book->setAvailability(htmlspecialchars($post['availability'], ENT_QUOTES, 'UTF-8'));
+        $book->setPicture(Utils::uploadFile($_FILES['cover'], 'ressources/uploads/', 'book_cover'));
+        return $book;
+    }
+
     public function getAllBooks(): array
     {
         $sql = <<<SQL
@@ -48,14 +61,37 @@ class BookManager extends AbstractEntityManager
         return $books;
     }
 
-
-    public function addBook($title, $author, $description, $ownerId, $availability, $coverPath): void
+    /*
+     * legacy
+     * deprecated
+     */
+    public function addBookFromData($title, $author, $description, $ownerId, $availability, $coverPath): void
     {
         $sql = <<<SQL
         INSERT INTO book (title, author, description, owner_id, availability, picture) VALUES (:title, :author, :description, :ownerId, :availability, :coverPath)
         SQL;
         $this->db->query($sql, ['title' => $title, 'author' => $author, 'description' => $description, 'ownerId' => $ownerId, 'availability' => $availability, 'coverPath' => $coverPath]);
     }
+
+    public function addBook(Book $book): void
+    {
+        $sql = <<<SQL
+        INSERT INTO book (title, author, description, owner_id, availability, picture) 
+        VALUES (:title, :author, :description, :ownerId, :availability, :picture)
+        SQL;
+
+        $this->db->query($sql,
+            [
+            'title' => $book->getTitle(),
+            'author' => $book->getAuthor(),
+            'description' => $book->getDescription(),
+            'ownerId' => $book->getOwnerId(),
+            'availability' => $book->getAvailability(),
+            'picture' => $book->getPicture()
+        ]
+        );
+    }
+
     public function getBookById(int $id): ?Book
     {
         $sql = <<<SQL

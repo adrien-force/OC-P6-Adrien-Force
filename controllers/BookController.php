@@ -91,27 +91,10 @@ class BookController
 
     public function addBook()
     {
-        $title = $_POST['title'];
-        $author = $_POST['author'];
-        $description = $_POST['description'];
-        $ownerId = $_SESSION['userId'];
-        $availability = $_POST['availability'];
-        $cover = $_FILES['cover'];
-
-        $title = htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
-        $author = htmlspecialchars($author, ENT_QUOTES, 'UTF-8');
-        $description = htmlspecialchars($description, ENT_QUOTES, 'UTF-8');
-        $availability = htmlspecialchars($availability, ENT_QUOTES, 'UTF-8');
+        $book = $this->bookManager->createFromPost($_POST);
 
         try {
-            $coverPath = Utils::uploadFile($cover, 'ressources/uploads/','book_cover');
-        } catch (Exception $e) {
-            die('Error: ' . $e->getMessage());
-        }
-
-
-        try {
-            $this->bookManager->addBook($title, $author, $description, $ownerId, $availability, $coverPath);
+            $this->bookManager->addBook($book);
         } catch (Exception $e) {
             die('Error: ' . $e->getMessage());
         }
