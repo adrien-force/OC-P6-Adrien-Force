@@ -5,7 +5,7 @@
         <div class="accountPageContent">
             <div class="accountCard">
                 <div class="myAccountCard userCard">
-                    <img src="ressources/assets/hamza.png">
+                    <img src=" <?= $user->getPicture() ?>">
                     <div class="separationLine"></div>
                     <h2> <?= $user->getUsername()?> </h2>
                     <h3> Membre depuis <?= Utils::dateDiff($user->getSignUpDate()) ?> </h3>
