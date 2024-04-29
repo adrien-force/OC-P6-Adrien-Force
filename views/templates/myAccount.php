@@ -61,7 +61,7 @@ require_once 'models/User.php'
                         <td> <?php echo $book->getTitle(); ?> </td>
                         <td> <?php echo $book->getAuthor(); ?> </td>
                         <td class="italic"> <?php echo Utils::shortenText($book->getDescription(), 80); ?> </td>
-                        <td class="padding"> <span class="availability <?php if($book->getAvailability() === "disponible"){ echo "available";}else{echo "unavailable";}; ?>"><?php echo $book->getAvailability(); ?></span></td>
+                        <td class="padding"> <span class="availability <?php if($book->getAvailability() === "disponible"){ echo "available";}else{echo "unavailable";} ?>"><?php echo $book->getAvailability(); ?></span></td>
                         <td><a href="index.php?action=modifyBook&id=<?=$book->getId()?>" class="editButton">Éditer</a><a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre?')" href="index.php?action=deleteBook&id=<?=$book->getId()?>" class="deleteButton">Supprimer</a></td>
                     </tr>
                 <?php endforeach; } ?>
