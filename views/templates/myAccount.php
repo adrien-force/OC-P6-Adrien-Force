@@ -53,7 +53,9 @@ require_once 'models/User.php'
                     <th> DISPONIBILITE</th>
                     <th> ACTION </th>
                 </tr>
-                <?php foreach ($books as $book): ?>
+                <?php
+                if (isset($books)) {
+                foreach ($books as $book): ?>
                     <tr>
                         <td> <img src="<?php echo $book->getPicture(); ?>" alt="Photo du livre <?= $book->getTitle()?>"></td>
                         <td> <?php echo $book->getTitle(); ?> </td>
@@ -62,7 +64,7 @@ require_once 'models/User.php'
                         <td class="padding"> <span class="availability <?php if($book->getAvailability() === "disponible"){ echo "available";}else{echo "unavailable";}; ?>"><?php echo $book->getAvailability(); ?></span></td>
                         <td><a href="index.php?action=modifyBook&id=<?=$book->getId()?>" class="editButton">Éditer</a><a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre?')" href="index.php?action=deleteBook&id=<?=$book->getId()?>" class="deleteButton">Supprimer</a></td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endforeach; } ?>
             </table>
         </div>
 
