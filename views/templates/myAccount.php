@@ -10,7 +10,7 @@ require_once 'models/User.php'
             </div>
             <section class="myAccountCards">
                 <div class="myAccountCard userCard">
-                    <img src="<?php echo $user->getPicture(); ?>">
+                    <img src="<?php echo $user->getPicture(); ?>" alt="Photo de profil de <?= $user->getTitle()?>">
                     <a> modifier </a>
                     <div class="separationLine"></div>
                     <h2> <?php echo $user->getUsername(); ?> </h2>
@@ -55,7 +55,7 @@ require_once 'models/User.php'
                 </tr>
                 <?php foreach ($books as $book): ?>
                     <tr>
-                        <td> <img src="<?php echo $book->getPicture(); ?>"></td>
+                        <td> <img src="<?php echo $book->getPicture(); ?>" alt="Photo du livre <?= $book->getTitle()?>"></td>
                         <td> <?php echo $book->getTitle(); ?> </td>
                         <td> <?php echo $book->getAuthor(); ?> </td>
                         <td class="italic"> <?php echo Utils::shortenText($book->getDescription(), 80); ?> </td>

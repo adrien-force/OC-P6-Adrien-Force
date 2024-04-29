@@ -26,7 +26,7 @@
                     foreach ($books as $book) : ?>
                         <a href="index.php?action=detailBook&id=<?php echo $book->getId() ?>">
                             <div class="bookCard">
-                                <img src="<?php echo $book->getPicture(); ?>">
+                                <img src="<?php echo $book->getPicture(); ?>" alt="Photo du livre <?= $book->getTitle()?>">
                                 <h3>
                                     <?= $book->getTitle() ?>
                                 </h3>

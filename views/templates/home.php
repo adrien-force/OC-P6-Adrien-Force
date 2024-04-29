@@ -21,7 +21,7 @@
         </div>
 
         <div class="rightPanel">
-            <img src="ressources/assets/hamza.png">
+            <img src="ressources/assets/hamza.png" alt="Photo de Hamza entouré de livres">
             <h4>
                 Hamza
             </h4>
@@ -43,7 +43,7 @@
                         ?>
                         <a href="?action=detailBook&id=<?=$book->getId()?>">
                         <div class="bookCard">
-                            <img src="<?php echo $book->getPicture(); ?>">
+                            <img src="<?php echo $book->getPicture(); ?>"alt="Photo de couverture de <?= $book->getTitle()?>">
                             <h3>
                                 <?php echo $book->getTitle(); ?>
                             </h3>
@@ -85,7 +85,7 @@
     </div>
 
     <div class="section4">
-        <img src="ressources/assets/homeMidBanner.png">
+        <img src="ressources/assets/homeMidBanner.png" alt="Bibliothèque / Image de décoration ">
     </div>
 
     <div class="section5">
@@ -101,7 +101,7 @@
             de partager leurs découvertes littéraires et d'échanger des livres qui attendent patiemment sur les
             étagères. </h3>
         <div class="leftJustify"><h4>L’équipe Tom Troc</h4></div>
-        <img src="ressources/assets/heart.png">
+        <img src="ressources/assets/heart.png" alt="Coeur en signature">
 
     </div>
 

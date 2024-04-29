@@ -23,7 +23,7 @@
         <nav>
             <div class="leftNav">
                 <div>
-                    <a href="index.php"> <img class="logo" src="ressources/assets/logo.png"> </a>
+                    <a href="index.php"> <img class="logo" src="ressources/assets/logo.png" alt="Logo du site TomTroc"> </a>
                 </div>
                 <div>
                     <a href="index.php"> Accueil</a>
@@ -72,7 +72,7 @@
             <a href="index.php"> Politique de confidentialité</a>
             <a href="index.php"> Mentions légales</a>
             <a href="index.php"> Tom Troc © </a>
-            <a href="index.php"> <img class="logoTT" src="ressources/assets/logoTT.png"> </a>
+            <a href="index.php"> <img class="logoTT" src="ressources/assets/logoTT.png" alt="Logo du site TomTroc"> </a>
         </div>
     </nav>
 </footer>

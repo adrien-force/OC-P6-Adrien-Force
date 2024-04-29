@@ -5,7 +5,7 @@
     <div class="bgOverflow">
     <div class="detailBookContent">
         <div class="photoSide">
-            <img src="<?php echo $book->getPicture(); ?>">
+            <img src="<?php echo $book->getPicture(); ?>" alt="Photo de couverture de <?= $book->getTitle()?>">
         </div>
         <div class="detailBook">
             <h2> <?= $book->getTitle() ?> </h2>
@@ -17,7 +17,7 @@
                 <h3> Propriétaire </h3>
             <a href="?action=account&id=<?=$book->getOwnerId()?>">
             <div class="ownerBubble">
-                <img src="<?=UserManager::getProfilePictureByOwnerId($book->getOwnerId());?>">
+                <img src="<?=UserManager::getProfilePictureByOwnerId($book->getOwnerId());?>" alt="Photo de profil du propriétaire">
                 <h5> <?php echo UserManager::getUsernameByOwnerId($book->getOwnerId());?> </h5>
             </div>
             </a>

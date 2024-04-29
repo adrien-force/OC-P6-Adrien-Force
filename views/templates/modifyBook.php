@@ -7,7 +7,7 @@
         <div class="modifyBookContent">
             <div class="photoSide">
                 <h4> Photo </h4>
-                <img src="<?= $book->getPicture()?>">
+                <img src="<?= $book->getPicture()?>" alt="Photo du livre <?= $book->getTitle()?>">
                 <span class="modifyPicLink"> <a class=""> Modifier la photo </a></span> <!-- TODO Need to handle how to upload a pic -->
             </div>
             <form action="?action=updateBook" method="POST">

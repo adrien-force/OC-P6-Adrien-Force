@@ -26,7 +26,7 @@
             <h3> Pas de compte ? <a href="index.php?action=signUp"> Inscrivez-vous </a></h3>
         </div>
         <div class="rightImg">
-            <img src="ressources/assets/signUpImage.jpeg">
+            <img src="ressources/assets/signUpImage.jpeg" alt="Photo de couverture montrant une bibliothèque">
         </div>
 
     </div>

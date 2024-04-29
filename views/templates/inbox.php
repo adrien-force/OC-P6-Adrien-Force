@@ -15,7 +15,7 @@
                         foreach ($conversations as $otherUserId => $conversation) {
                             ?>
                             <a href="?action=showInbox&receiver_id=<?= $conversation['conversationPartnerId'] ?>" class="conversation <?php if (isset($_GET['receiver_id'])) { echo $conversation['conversationPartnerId'] == $_GET['receiver_id'] ? 'selected' : '' ;}?>">
-                                <img src="<?php echo UserManager::getProfilePictureByOwnerId($conversation['conversationPartnerId']); ?>">
+                                <img src="<?php echo UserManager::getProfilePictureByOwnerId($conversation['conversationPartnerId']); ?>" alt="Photo de profil de <?= UserManager::getUsernameByOwnerId($conversation['conversationPartnerId'])?>">
                                 <div class="conversationInfos">
                                     <div class="conversationInfoTop">
                                         <h3 class="conversationPseudo"> <?php echo UserManager::getUsernameByOwnerId(($conversation['conversationPartnerId'])); ?> </h3>
@@ -32,7 +32,7 @@
 
                 <div class="messageSide">
                     <div class="messageTop">
-                        <img src="<?php echo UserManager::getProfilePictureByOwnerId($selectedConversation['receiver_id']); ?>">
+                        <img src="<?php echo UserManager::getProfilePictureByOwnerId($selectedConversation['receiver_id']); ?>" alt="Photo de profil de <?= UserManager::getUsernameByOwnerId($conversation['conversationPartnerId'])?>">
                         <h2> <?php echo UserManager::getUsernameByOwnerId($selectedConversation['receiver_id']); ?> </h2>
                     </div>
                     <div class="messages">
