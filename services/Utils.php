@@ -8,7 +8,7 @@ class Utils
      * @param string $action : l'action que l'on veut faire (correspond aux actions dans le routeur)
      * @param array  $params : Facultatif, les paramètres de l'action sous la forme ['param1' => 'valeur1', 'param2' => 'valeur2']
      */
-    public static function redirect(string $action, array $params = []): void
+    public static function redirect(string $action, array $params = []): never
     {
         $url = "index.php?action=$action";
         foreach ($params as $paramName => $paramValue) {

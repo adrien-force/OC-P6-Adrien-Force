@@ -147,7 +147,7 @@ class UserController
         }
     }
 
-    public function signOut(): void
+    public function signOut(): never
     {
         $_SESSION = [];
 
