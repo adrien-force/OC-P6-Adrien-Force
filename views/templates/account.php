@@ -1,8 +1,5 @@
 <?php /* Page affichant les informations d'un compte et la liste des livres d'un utilisateur*/ ?>
-<?php if(isset($user) && isset($books)){
-    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-    $startIndex = ($page - 1) * 4;
-    ?>
+<?php if(isset($user) && isset($books)) { ?>
 <div class="accountPage">
     <div class="bgOverflow">
         <div class="accountPageContent">
@@ -20,10 +17,10 @@
             </div>
             <table class="myAccountBooks">
                 <tr>
-                    <th> <a class="previousPage"href="?action=account&id=<?=$_GET['id']?>&page=<?=$page - 1; ?>"><i class="fa-solid fa-chevron-left"></i></a> PHOTO </th>
+                    <th> PHOTO </th>
                     <th> TITRE</th>
                     <th> AUTEUR</th>
-                    <th>DESCRIPTION <a class="nextPage"href="?action=account&id=<?=$_GET['id']?>&page=<?=$page + 1; ?>"><i class="fa-solid fa-chevron-right"></i></a></th>
+                    <th>DESCRIPTION </th>
                 </tr>
                 <?php
 
@@ -31,15 +28,7 @@
                     return $book->getAvailability() === "disponible";
                 });
 
-                $totalBooks = count($availableBooks);
-                $totalPages = ceil($totalBooks / 4);
-
-                if ($page > $totalPages || $page < 1) {
-                    header("Location: ?action=account&id=".$_GET['id']."&page=".$totalPages);
-                    exit();
-                }
-
-                $availableBooks = array_slice($availableBooks, $startIndex, 4);
+                $availableBooks = array_slice($availableBooks, 0, 4);
 
                 foreach($availableBooks as $book): ?>
                     <tr>
