@@ -10,7 +10,7 @@ require_once 'models/User.php'
             </div>
             <section class="myAccountCards">
                 <div class="myAccountCard userCard">
-                    <img src="<?php echo $user->getPicture(); ?>" alt="Photo de profil de <?= $user->getTitle()?>">
+                    <img src="<?php echo $user->getPicture(); ?>" alt="Photo de profil de <?= $user->getUsername()?>">
                     <a> modifier </a>
                     <div class="separationLine"></div>
                     <h2> <?php echo $user->getUsername(); ?> </h2>
