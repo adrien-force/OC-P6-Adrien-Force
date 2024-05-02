@@ -1,5 +1,5 @@
-<h1 style="text-align:center">Développement du site de TomTroc</h1>
-<p style="text-align:center"><i>Projet N°6 de la formation Développeur d'application PHP Symfony
+<h1 align="center">Développement du site de TomTroc</h1>
+<p align="center"><i>Projet N°6 de la formation Développeur d'application PHP Symfony
 @OpenClassrooms <br> <a href="https://github.com/adrien-force/OC-P6-Adrien-Force/commits?author=adrien-force"><img src="https://img.shields.io/badge/Auteur_:-Adrien_FORCE-orange"></a></i></p>
 
 ## 🎯 Table des matières
