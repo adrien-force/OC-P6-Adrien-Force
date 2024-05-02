@@ -1270,6 +1270,10 @@ body:has(.accountPage) {
     margin-bottom: 50px;
 }
 
+.accountPageContent img {
+    object-fit: cover;
+}
+
 .accountPageContent table {
     width: 100%;
     border-collapse: collapse;
