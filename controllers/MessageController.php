@@ -2,8 +2,6 @@
 
 class MessageController
 {
-    private ConversationController $conversationController;
-
     private MessageManager $messageManager;
 
     public function __construct()

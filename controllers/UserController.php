@@ -1,6 +1,6 @@
 <?php
 
-require_once 'models/BookManager.php';
+require_once 'managers/BookManager.php';
 require_once 'models/User.php';
 
 class UserController

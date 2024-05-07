@@ -19,6 +19,10 @@ spl_autoload_register(function ($className) {
         require_once 'controllers/' . $className . '.php';
     }
 
+    if(file_exists('managers/' . $className . '.php')) {
+        require_once 'managers/' . $className . '.php';
+    }
+
     if (file_exists('views/' . $className . '.php')) {
         require_once 'views/' . $className . '.php';
     }
