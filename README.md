@@ -29,8 +29,8 @@ git clone https://github.com/adrien-force/OC-P6-Adrien-Force.git
 
 3. Intégrer les tables de la base de données via le fichier : <br> <br>
 
-   - `TomTroc.dev.sql` pour une base de données MySQL de developpement
-   - `TomTroc.empty.sql` pour une base de données MySQL vierge
+   - `docs/TomTroc.dev.sql` pour une base de données MySQL de developpement
+   - `docs/TomTroc.empty.sql` pour une base de données MySQL vierge
      <br> <br>
 
 ## 🔥️ Utilisation
