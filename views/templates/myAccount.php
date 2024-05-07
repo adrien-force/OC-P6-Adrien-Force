@@ -17,6 +17,7 @@ require_once 'models/User.php'
                     <h3> Membre depuis <?= Utils::dateDiff($user->getSignUpDate()) ?> </h3>
                     <h4> BIBLIOTHEQUE </h4>
                     <h3 class="darkText">  <i class="fa-solid fa-book-open"></i> <?= $user->getHowManyBookByUser($user->getId()) ?> livres </h3>
+                    <a href="?action=showAddBook" class="mainButton clearButton"> Ajouter un livre </a>
 
                 </div>
                 <div class="myAccountCard modifyCard">

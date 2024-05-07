@@ -5,7 +5,6 @@ class BookManager extends AbstractEntityManager
     public function createFromPost(array $post): Book
     {
         $book = new Book();
-
         $book->setTitle(htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8'));
         $book->setAuthor(htmlspecialchars($post['author'], ENT_QUOTES, 'UTF-8'));
         $book->setDescription(htmlspecialchars($post['description'], ENT_QUOTES, 'UTF-8'));
