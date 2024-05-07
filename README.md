@@ -5,6 +5,7 @@
 ## 🎯 Table des matières
 - [Description du projet](#-description)
 - [Installation du projet](#-installation)
+- [Prérequis](#-prérequis)
 - [Utilisation du projet](#-utilisation)
 - [Features supplémentaires](#-features-supplémentaires)
 
@@ -16,6 +17,14 @@ Ce projet consiste à développer un site web pour une association nommée TomTr
 Cette association a pour but de mettre en relation des personnes souhaitant échanger des livres.
 Le site doit permettre aux utilisateurs de s'inscrire, de se connecter, de consulter les annonces, de contacter les autres utilisateurs. 
 <br> <br>
+
+
+## 🔧 Prérequis
+
+- Serveur web (Apache)
+- Base de données (MySQL)
+- PHP >= 8.0
+
 ## 🛠️ Installation
 
 1. Cloner le projet sur votre machine
