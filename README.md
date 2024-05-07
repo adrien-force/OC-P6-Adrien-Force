@@ -2,6 +2,8 @@
 <p align="center"><i>Projet N°6 de la formation Développeur d'application PHP Symfony
 @OpenClassrooms <br> <a href="https://github.com/adrien-force/OC-P6-Adrien-Force/commits?author=adrien-force"><img src="https://img.shields.io/badge/Auteur_:-Adrien_FORCE-orange"></a></i></p>
 
+Autres langues : [English](./README.en.md)
+
 ## 🎯 Table des matières
 - [Description du projet](#-description)
 - [Installation du projet](#-installation)
