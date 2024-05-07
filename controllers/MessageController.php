@@ -8,13 +8,12 @@ class MessageController
 
     public function __construct()
     {
-        $this->conversationController = new ConversationController();
         $this->messageManager = new MessageManager();
     }
 
     public function showInbox(): void {
         $conversations = $this->messageManager->getConversations($_SESSION['userId']);
-        $selectedConversation = $this->conversationController->getSelectedConversation($_SESSION['userId'], $_GET['receiver_id'] ?? null);
+        $selectedConversation = $this->messageManager->getSelectedConversation($_SESSION['userId'], $_GET['receiver_id'] ?? null);
 
         if ($selectedConversation) {
             $this->messageManager->markAsRead($_SESSION['userId'], $selectedConversation['conversationPartnerId']);
