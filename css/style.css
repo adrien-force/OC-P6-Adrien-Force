@@ -379,6 +379,8 @@ footer .logoTT {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+
 }
 
 .bookGrid a {
@@ -601,6 +603,24 @@ footer .logoTT {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.bookPage .availabilityTag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 30px;
+    font-family: var(--secondaryFont);
+    font-size: 8.88px;
+    font-weight: 500;
+    line-height: 10.74px;
+    padding: 3px 10px 3px 10px;
+    color: var(--backgroundColor);
+    width: 72px;
+    height: 19px;
 }
 
 .ourBookTop {

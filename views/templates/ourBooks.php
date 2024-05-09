@@ -26,6 +26,7 @@
                     foreach ($books as $book) : ?>
                         <a href="index.php?action=detailBook&id=<?php echo $book->getId() ?>">
                             <div class="bookCard">
+                                <?php if ($book->getAvailability() === "non dispo.") {?><h4 class="availabilityTag unavailable">non dispo.</h4> <?php } ?>
                                 <img src="<?php echo $book->getPicture(); ?>" alt="Photo du livre <?= $book->getTitle()?>">
                                 <h3>
                                     <?= $book->getTitle() ?>
